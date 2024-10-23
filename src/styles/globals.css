@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Updated gradient for black and orange */
+    --gradient: linear-gradient(to top left, #ff6b00, #000000);
+
+    --background: 0 0% 0%;         /* Pure black */
+    --foreground: 0 0% 100%;       /* White */
+
+    --muted: 0 0% 15%;            /* Dark grey */
+    --muted-foreground: 0 0% 70%;  /* Light grey */
+
+    --popover: 0 0% 5%;           /* Very dark grey */
+    --popover-foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+
+    --primary: 24 100% 50%;        /* Orange */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 24 100% 50%;         /* Orange */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --ring: 24 100% 50%;          /* Orange */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 100%;       /* White */
+    --foreground: 0 0% 0%;         /* Black */
+
+    --primary: 24 100% 50%;        /* Orange */
+    --primary-foreground: 0 0% 100%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --secondary: 24 30% 95%;       /* Light orange */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 24 100% 50%;         /* Orange */
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 24 100% 50%;          /* Orange */
+
+    --radius: 0.5rem;
+  }
+}
+
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: hsl(var(--background));
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-thumb {
+  color: hsl(var(--primary));
+  background-color: hsl(var(--primary));
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(var(--background));
+}
+
+.dotPattern {
+  background-image: radial-gradient(rgb(40, 40, 40) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.use-automation-zoom-in {
+  animation: automation-zoom-in 0.5s;
+}
+
+.card-mask {
+  background: radial-gradient(ellipse at center, rgba(255, 107, 0, 0.15), transparent);
+}
+
+.gradient {
+  background: conic-gradient(
+    from 230.29deg at 51.63% 52.16%,
+    rgb(0, 0, 0) 0deg,
+    rgb(255, 107, 0) 67.5deg,
+    rgb(255, 72, 0) 198.75deg,
+    rgb(0, 0, 0) 251.25deg,
+    rgb(255, 107, 0) 301.88deg,
+    rgb(0, 0, 0) 360deg
+  );
+}
+
+.lamp {
+  opacity: 1;
+  transform: translateY(-200px) rotate(180deg) scale(2) translateZ(0px);
+}
+
+@keyframes automation-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
