@@ -1,69 +1,55 @@
 <h1 align="start">
-  Astra - AI Powered Website Builder
+  NBizz - Enterprise AI Automation Platform
 </h1>
+<img width="1280" alt="NBizz Platform Overview" src="https://github.com/user-attachments/assets/8d11fc9c-8220-4d36-a0e3-271b73a7f23d">
+Introduction
+NBizz is a cutting-edge AI automation platform designed for modern enterprises. Built with state-of-the-art technology, this platform streamlines business processes through intelligent automation. Our solution leverages Next.js for robust performance, TailwindCSS for modern styling, shadcn UI for sophisticated components, and enterprise-grade authentication for security.
+Platform Preview
+Experience the power of AI automation by exploring our platform demo: NBizz Platform Demo
+Tech Stack
 
-<img width="1280" alt="Astra Thumbnail" src="https://github.com/user-attachments/assets/8d11fc9c-8220-4d36-a0e3-271b73a7f23d">
+Next.js: For enterprise-grade application architecture
+TailwindCSS: For responsive and customizable styling
+Shadcn UI: For premium component library
+Magic UI: For enhanced user interface elements
+Enterprise Auth: For secure authentication system
+
+Quick Start
+Prerequisites
+Ensure you have installed:
+
+Node.js
+Git
+npm / yarn / pnpm / bun
 
 
-## Introduction
+Clone the repository:
+bashCopygit clone https://github.com/nbizz/automation-platform.git
+cd automation-platform
 
-Astra is a modern, fully responsive website built with a powerful tech stack. This project showcases the use of Next.js for server-side rendering, TailwindCSS for sleek styling, shadcn UI for elegant components, and Clerk for secure authentication.
+Install dependencies:
+bashCopynpm install
 
-## Watch Tutorial on YouTube
+Configure environment variables:
+bashCopy # application
+ NEXT_PUBLIC_URL=http://localhost:3000
+ NEXT_PUBLIC_DOMAIN=localhost:3000
 
-Check out the preivew to see how this website was built: [Astra Website Tutorial](https://youtu.be/zSz67kLPbZY?si=mVBTTh23pv_roRHQ)
+ # authentication
+ AUTH_SECRET_KEY=
+ NEXT_PUBLIC_AUTH_KEY=
+ NEXT_PUBLIC_AUTH_SIGNIN_URL=/sign-in
+ NEXT_PUBLIC_AUTH_SIGNUP_URL=/sign-up
+ NEXT_PUBLIC_AUTH_REDIRECT_SIGNIN=/dashboard
+ NEXT_PUBLIC_AUTH_REDIRECT_SIGNUP=/onboarding
 
-## Tech Stack
+Launch development server:
+bashCopynpm run dev
 
-- **Next.js**: For building the React-based website.
-- **TailwindCSS**: For styling with utility-first CSS.
-- **Shadcn UI**: For UI components.
-- **Magic UI**: For UI components.
-- **Clerk**: For user authentication.
+Access the platform at http://localhost:3000 to begin automation configuration.
 
-## Quick Start
-
-### Prerequisites
-Make sure that you have installed
-- Node.js
-- Git
-- npm / yarn / pnpm / bun
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/Shreyas-29/astra-website.git
-   cd astra-website
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Setup env variables:
-   ```bash
-    # app
-    NEXT_PUBLIC_URL=http://localhost:3000
-    NEXT_PUBLIC_DOMAIN=localhost:3000
-   
-    # clerk
-    CLERK_SECRET_KEY=
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
-    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
-   ```
-5. Run the development server:
-   ```bash
-   npm run dev
-   ```
-6. Open your browser and navigate to http://localhost:3000 to see the website in action.
-
-## Assets
-Download all the assets required for this project [here](https://drive.google.com).
-
-## ☕ Buy Me a Coffee
-If you enjoy using caps.ai, consider supporting my work!  
-[Buy Me a Coffee ☕](https://buymeacoffee.com/shreyas29)
-
-   
+Resources
+Access our comprehensive documentation and resources here.
+🤝 Enterprise Support
+For enterprise support and custom solutions, contact our team:
+Contact Enterprise Sales
