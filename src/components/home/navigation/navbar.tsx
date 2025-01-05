@@ -20,13 +20,13 @@ const Navbar = async () => {
             </Link>
           </div>
           <nav className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <ul className="flex items-center justify-center gap-8">
+          {/* <ul className="flex items-center justify-center gap-8">
 
-<Link href="#" className="hover:text-foreground/80 text-sm">Pricing</Link>
+<Link href="/pages/webdev" className="hover:text-foreground/80 text-sm">web Developement</Link>
 
-<Link href="#" className="hover:text-foreground/80 text-sm">About</Link>
+<Link href="/pages/about" className="hover:text-foreground/80 text-sm">About </Link>
 
-</ul>
+</ul> */}
           </nav>
           <div className="flex items-center gap-4">
             {/* Replace Clerk UserButton with your own login/signup logic */}
@@ -45,8 +45,8 @@ const Navbar = async () => {
             )}
             */}
             {/* Example: Replace with simple login/signup links */}
-            <Link href="/signup" className={buttonVariants({ size: "sm", className: "hidden md:flex" })}>
-            Contact
+            <Link href="https://cal.com/samogb/30min" className={buttonVariants({ size: "sm", className: "hidden md:flex" })}>
+           Book a call
             </Link>
           </div>
         </div>

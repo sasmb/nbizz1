@@ -24,79 +24,40 @@ const Footer = () => {
 
             <div className="grid-cols-2 gap-8 grid mt-16 xl:col-span-2 xl:mt-0">
                 <div className="md:grid md:grid-cols-2 md:gap-8">
-                    <div className="">
-                        <h3 className="text-base font-medium text-white">
-                            Product
-                        </h3>
-                        <ul className="mt-4 text-sm text-muted-foreground">
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Features
-                                </Link>
-                            </li>
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Pricing
-                                </Link>
-                            </li>
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Success Stories
-                                </Link>
-                            </li>
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Integrations
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
                     <div className="mt-10 md:mt-0 flex flex-col">
                         <h3 className="text-base font-medium text-white">
                             Platforms
                         </h3>
                         <ul className="mt-4 text-sm text-muted-foreground">
-                            <li className="">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    WhatsApp
+                            <li className="mt-2">
+                                <Link href="https://www.facebook.com/profile.php?id=61556311485728" className="hover:text-foreground transition-all duration-300">
+                                    Facebook
                                 </Link>
                             </li>
                             <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Messenger
+                                <Link href="https://x.com/dreamswerver" className="hover:text-foreground transition-all duration-300">
+                                    X
                                 </Link>
                             </li>
                             <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Websites
+                                <Link href="https://www.instagram.com/nexusbizzdotcom/" className="hover:text-foreground transition-all duration-300">
+                                    Instagram
                                 </Link>
                             </li>
                             <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Email Marketing
+                                <Link href="https://www.linkedin.com/in/samuel-ogbonna-sohae/" className="hover:text-foreground transition-all duration-300">
+                                    LinkedIn
+                                </Link>
+                            </li>
+                            <li className="mt-2">
+                                <Link href="https://www.youtube.com/@samogb" className="hover:text-foreground transition-all duration-300">
+                                    Youtube
                                 </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="md:grid md:grid-cols-2 md:gap-8">
-                    <div className="">
-                        <h3 className="text-base font-medium text-white">
-                            Resources
-                        </h3>
-                        <ul className="mt-4 text-sm text-muted-foreground">
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Case Studies
-                                </Link>
-                            </li>
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Support
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
                     <div className="mt-10 md:mt-0 flex flex-col">
                         <h3 className="text-base font-medium text-white">
                             Company
@@ -109,12 +70,7 @@ const Footer = () => {
                             </li>
                             <li className="mt-2">
                                 <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li className="mt-2">
-                                <Link href="" className="hover:text-foreground transition-all duration-300">
-                                    Terms & Conditions
+                                    Support
                                 </Link>
                             </li>
                         </ul>

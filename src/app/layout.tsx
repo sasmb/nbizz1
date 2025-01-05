@@ -3,7 +3,8 @@ import { SITE_CONFIG } from "@/config";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { dark } from '@clerk/themes';
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google"; 
+
 
 const font = Inter({ subsets: ["latin"] });
 

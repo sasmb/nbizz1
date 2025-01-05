@@ -2,11 +2,10 @@ import { Metadata } from "next";
 
 export const SITE_CONFIG: Metadata = {
     title: {
-        // write a default title for astra a ai powered website builder suggest something unique and catchy don't use the same words of ai powered website builder give a unique name
-        default: "Nbizz - AI Powered sales assistant",
-        template: `%s | Nbizz`
+      default: "Nbizz - Automated Solutions for Modern Business",
+      template: `%s | Nbizz`
     },
-    description: "NBizz AI Create's personalized sales experiences in minutes. No technical expertise needed. Start boosting your revenue today!",
+    description: "Nbizz designs intelligent systems to automate operations for modern businesses. Streamline tasks, increase efficiency, and boost growth effortlessly!",
     icons: {
         icon: [
             {
@@ -16,8 +15,8 @@ export const SITE_CONFIG: Metadata = {
         ]
     },
     openGraph: {
-        title: "Nbizz - AI Powered sales assistant",
-        description: "NBizz AI transforms your sales conversations with intelligent automation. Create personalized sales experiences in minutes. No technical expertise needed. Start boosting your revenue today!",
+        title: "Nbizz - Automated Solutions for Modern Business",
+        description: "Nbizz creates tailored automation solutions that empower modern businesses. Streamline operations, increase productivity, and drive growth without hassle!",
         images: [
             {
                 url: "/assets/og-image.png",
@@ -27,8 +26,8 @@ export const SITE_CONFIG: Metadata = {
     twitter: {
         card: "summary_large_image",
         creator: "@dreamswerver",
-        title: "Nbizz - AI Powered sales assistant",
-        description: "NBizz AI transforms your sales conversations with intelligent automation. Create personalized sales experiences in minutes. No technical expertise needed. Start boosting your revenue today!",
+        title: "Nbizz - Automated Solutions for Modern Business",
+        description: "Nbizz designs intelligent automation systems to streamline business operations, increase productivity, and boost growth effortlessly!",
         images: [
             {
                 url: "/assets/og-image.png",

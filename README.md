@@ -22,34 +22,41 @@ Node.js
 Git
 npm / yarn / pnpm / bun
 
+1. Clone this repository:
 
-Clone the repository:
-bashCopygit clone https://github.com/nbizz/automation-platform.git
-cd automation-platform
+   ```bash
+   git clone https://github.com/Shreyas-29/astra-website.git
+   cd astra-website
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Setup env variables:
+   ```bash
+    # app
+    NEXT_PUBLIC_URL=http://localhost:3000
+    NEXT_PUBLIC_DOMAIN=localhost:3000
+   
+    # clerk
+    CLERK_SECRET_KEY=
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+   ```
+5. Run the development server:
+   ```bash
+   npm run dev
+   ```
+6. Open your browser and navigate to http://localhost:3000 to see the website in action.
 
-Install dependencies:
-bashCopynpm install
+## Assets
+Download all the assets required for this project [here](https://drive.google.com).
 
-Configure environment variables:
-bashCopy # application
- NEXT_PUBLIC_URL=http://localhost:3000
- NEXT_PUBLIC_DOMAIN=localhost:3000
+## ☕ Buy Me a Coffee
+If you enjoy using caps.ai, consider supporting my work!  
+[Buy Me a Coffee ☕](https://buymeacoffee.com/shreyas29)
 
- # authentication
- AUTH_SECRET_KEY=
- NEXT_PUBLIC_AUTH_KEY=
- NEXT_PUBLIC_AUTH_SIGNIN_URL=/sign-in
- NEXT_PUBLIC_AUTH_SIGNUP_URL=/sign-up
- NEXT_PUBLIC_AUTH_REDIRECT_SIGNIN=/dashboard
- NEXT_PUBLIC_AUTH_REDIRECT_SIGNUP=/onboarding
-
-Launch development server:
-bashCopynpm run dev
-
-Access the platform at http://localhost:3000 to begin automation configuration.
-
-Resources
-Access our comprehensive documentation and resources here.
-🤝 Enterprise Support
-For enterprise support and custom solutions, contact our team:
-Contact Enterprise Sales
+   
