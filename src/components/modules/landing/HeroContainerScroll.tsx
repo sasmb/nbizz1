@@ -34,7 +34,7 @@ export const HeroContainerScroll: React.FC<HeroContainerScrollProps> = ({}) => {
 
   return (
     <div
-      className="flex items-center justify-center relative pt-36 z-[99999] w-full"
+      className="flex items-center justify-center relative pt-36 z-[99999]"
       ref={containerRef}
     >
       <div
@@ -47,7 +47,7 @@ export const HeroContainerScroll: React.FC<HeroContainerScrollProps> = ({}) => {
           style={{
             translateY,
           }}
-          className="max-w-5xl mx-auto text-center"
+          className="max-w-5xl mx-auto text-center relative"
         >
           <a href="#" className="bg-slate-800 z-[99999] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  inline-block">
             <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -98,8 +98,9 @@ const Card: React.FC<CardProps> = ({ rotate, scale }) => {
   return (
     <motion.div
       style={{
-        rotateX: rotate, // rotate in X-axis
+        rotateX: rotate,
         scale,
+        transformOrigin: "top",
       }}
       className="max-w-5xl mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-6 bg-background rounded-[30px] shadow-2xl"
     >

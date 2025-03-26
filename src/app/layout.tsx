@@ -16,15 +16,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" suppressHydrationWarning className="overflow-x-clip">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={cn(
-                    "min-h-screen bg-background text-foreground antialiased max-w-full overflow-x-clip",
+                    "min-h-screen bg-background text-foreground antialiased",
                     font.className
                 )}
             >
+                <div className="relative">
                     {children}
                     <Footer />
+                </div>
             </body>
         </html>
     );

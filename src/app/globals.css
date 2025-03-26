@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+html {
+  overflow-x: hidden;
+}
+
 body {
   height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 *,
