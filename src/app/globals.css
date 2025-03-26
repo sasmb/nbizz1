@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    /* Light mode - inspired by dark gradient theme */
+    --gradient: linear-gradient(to top left, #152331, #000000);
+    
+    --background: 223 97% 98.28%;
+    --foreground: 223 4% 0.56%;
+    
+    --primary: 223 40% 85%;
+    --primary-foreground: 223 0.8% 7%;
+    
+    --card: 223 58% 96%;
+    --card-foreground: 223 4% 0.7%;
+    
+    --popover: 223 58% 96%;
+    --popover-foreground: 223 4% 0.7%;
+    
+    --secondary: 223 2% 95.7%;
+    --secondary-foreground: 223 3.4% 11.4%;
+    
+    --muted: 223 4% 91.4%;
+    --muted-foreground: 223 2% 41.4%;
+    
+    --accent: 223 2% 95.7%;
+    --accent-foreground: 223 3.4% 11.4%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 223 9% 89.56%;
+    --input: 223 9% 89.56%;
+    --ring: 223 40% 85%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode - matching the provided custom theme */
+    --gradient: linear-gradient(to top left, #152331, #000000);
+    
+    --background: 223 97% 5.28%;
+    --foreground: 223 4% 98.56%;
+    
+    --muted: 223 4% 15.4%;
+    --muted-foreground: 223 2% 61.4%;
+    
+    --popover: 223 58% 15.4%;
+    --popover-foreground: 223 4% 98.7%;
+    
+    --card: 223 58% 15.4%;
+    --card-foreground: 223 4% 98.7%;
+    
+    --border: 223 9% 20.56%;
+    --input: 223 9% 20.56%;
+    
+    --primary: 223 40% 14%;
+    --primary-foreground: 223 0.8% 91.4%;
+    
+    --secondary: 223 2% 15.7%;
+    --secondary-foreground: 223 3.4% 91.4%;
+    
+    --accent: 223 2% 15.7%;
+    --accent-foreground: 223 3.4% 91.4%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --ring: 223 40% 14%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-medium::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+.dotPattern {
+  background-image: radial-gradient(rgb(35, 40, 68) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.use-automation-zoom-in {
+  animation: automation-zoom-in cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+}
+
+@keyframes automation-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}

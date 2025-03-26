@@ -1,20 +1,48 @@
 import { Icons } from "@/components";
 
+export const testimonials = [
+  {
+    quote: "NBizz has transformed how we manage our business operations. The automation features are incredible!",
+    name: "Sarah Chen",
+    title: "Product Manager at TechCorp",
+  },
+  {
+    quote: "The analytics dashboard gives us insights that have directly contributed to our 40% growth.",
+    name: "Michael Rodriguez",
+    title: "Marketing Director at GrowthCo",
+  },
+  {
+    quote: "Their business management solutions are unmatched. Best decision we made this year.",
+    name: "Emily Thompson",
+    title: "CEO at InnovateX",
+  },
+  {
+    quote: "The platform's intuitive design and powerful features make it essential for modern businesses.",
+    name: "David Kim",
+    title: "Tech Lead at FutureTech",
+  },
+  {
+    quote: "We've seen remarkable improvements in our workflow efficiency since implementing NBizz.",
+    name: "Lisa Johnson",
+    title: "Operations Manager at ScaleUp",
+  }
+];
+
 export const perks = [
     {
-        icon: Icons.auth,
+        icon: "🚀",
         title: "Lifetime Updates",
-        info: "NBizz Sites aren't built like normal websites. They're overengineered to live forever and improve over time..",
+        info: "NBizz solutions are built to evolve. Get lifetime updates and improvements as we grow.",
     },
     {
-        icon: Icons.customize,
+        icon: "📈",
         title: "Lead Generation",
-        info: "The main purpose of your website should be to generate leads so you can grow your business. NBizz Sites are designed to do just that.",
+        info: "Generate more leads and grow your business with our modern, conversion-optimized solutions.",
     },
     {
-        icon: Icons.launch,
+        icon: "⚡",
         title: "Modern Technology",
-        info: "NBizz sites are not only fast, but they also integrate with the tools you already use to run your business.",
+        info: "Built with cutting-edge tech that integrates seamlessly with your existing business tools.",
     },
 ];
 
