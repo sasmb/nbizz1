@@ -40,7 +40,7 @@ export default async function SuccessPage({
           Payment Successful!
         </h1>
         <p className="text-gray-600 mb-8">
-          Thank you for your purchase. We'll be in touch shortly with next steps.
+          Thank you for your purchase. We&apos;ll be in touch shortly with next steps.
         </p>
         <a
           href="/"
