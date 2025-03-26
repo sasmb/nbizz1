@@ -21,36 +21,29 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLDivElement>(null);
   const [start, setStart] = React.useState(false);
-  const animationRef = React.useRef<any>(null);
-
-  const addAnimation = React.useCallback(() => {
-    if (!scrollerRef.current) return;
-    const scrollerContent = Array.from(scrollerRef.current.children);
-
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      if (scrollerRef.current) {
-        scrollerRef.current.appendChild(duplicatedItem);
-      }
-    });
-
-    getDirection();
-    start && addHoverEvents();
-    animationRef.current = startAnimation();
-  }, [start]);
 
   React.useEffect(() => {
-    const animation = addAnimation();
-    
-    return () => {
-      const current = animationRef.current;
-      if (current) {
-        current.kill();
-      }
-    };
-  }, [addAnimation]);
+    addAnimation();
+  }, []);
 
-  function getDirection() {
+  function addAnimation() {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  }
+
+  const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
         containerRef.current.style.setProperty(
@@ -64,9 +57,9 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
         );
       }
     }
-  }
+  };
 
-  function getSpeed() {
+  const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "20s");
@@ -76,42 +69,7 @@ export const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
         containerRef.current.style.setProperty("--animation-duration", "80s");
       }
     }
-  }
-
-  function addHoverEvents() {
-    if (containerRef.current) {
-      containerRef.current.addEventListener("mouseenter", () => {
-        if (pauseOnHover) {
-          animationRef.current.pause();
-        }
-      });
-      containerRef.current.addEventListener("mouseleave", () => {
-        if (pauseOnHover) {
-          animationRef.current.play();
-        }
-      });
-    }
-  }
-
-  function startAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      getSpeed();
-      return containerRef.current.animate(
-        {
-          transform: [
-            `translateX(0)`,
-            `translateX(-${scrollerRef.current.scrollWidth}px)`
-          ],
-        },
-        {
-          duration: containerRef.current.style.getPropertyValue("--animation-duration"),
-          iterations: Infinity,
-          fill: "forwards",
-        }
-      );
-    }
-    return null;
-  }
+  };
 
   return (
     <div
