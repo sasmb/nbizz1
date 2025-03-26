@@ -19,14 +19,12 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body
                 className={cn(
-                    "min-h-screen bg-background text-foreground antialiased",
+                    "min-h-screen bg-background text-foreground antialiased max-w-[100vw] overflow-x-hidden",
                     font.className
                 )}
             >
-                <div className="relative">
                     {children}
                     <Footer />
-                </div>
             </body>
         </html>
     );
