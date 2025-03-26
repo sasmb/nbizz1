@@ -1,8 +1,8 @@
 import { LucideProps } from "lucide-react";
-import React from 'react'; // Import React for JSX support
+import React from "react";
 
 type IconType = {
-    [key: string]: (props: LucideProps) => JSX.Element;
+    [key: string]: (props: LucideProps) => React.ReactElement;
 };
 
 const Icons: IconType = {

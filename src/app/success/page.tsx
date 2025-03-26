@@ -39,8 +39,8 @@ export default async function SuccessPage({
         <h1 className="text-2xl font-bold text-gray-900 mb-4">
           Payment Successful!
         </h1>
-        <p className="text-gray-600 mb-8">
-          Thank you for your purchase. We'll be in touch shortly with next steps.
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto">
+          We&apos;re thrilled to have you on board! Your payment has been successfully processed.
         </p>
         <a
           href="/"
