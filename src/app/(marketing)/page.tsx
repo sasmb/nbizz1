@@ -14,15 +14,16 @@ import { buttonVariants } from "@/components/ui/button";
 const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen w-full">
-      <div className="relative w-full flex flex-col items-center overflow-x-clip">
-        {/* <div className="absolute bottom-0 left-0 right-0 top-0 dark:bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[linear-gradient(to_right,#c4c2c2_1px,transparent_1px),linear-gradient(to_bottom,#c4c2c2_1px,transparent_1px)] bg-[size:1rem_1rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-10" /> */}
-        <section className="w-full relative">
-          <MaxWidthWrapper className="flex items-center justify-center">
-            <HeroContainerScroll />
-          </MaxWidthWrapper>
-          <BackgroundBeams />
-        </section>
-        
+      {/* Hero section - no overflow control */}
+      <section className="w-full relative">
+        <MaxWidthWrapper className="flex items-center justify-center">
+          <HeroContainerScroll />
+        </MaxWidthWrapper>
+        <BackgroundBeams />
+      </section>
+      
+      {/* All other sections with overflow control */}
+      <div className="main-content">
         <section className="w-full py-12">
           <MaxWidthWrapper className="flex items-center flex-col gap-4 md:mt-20">
             <h2 className="text-4xl text-center font-medium">
