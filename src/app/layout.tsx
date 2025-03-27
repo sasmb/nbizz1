@@ -8,7 +8,18 @@ import { Inter } from "next/font/google";
 
 const font = Inter({ subsets: ["latin"] });
 
-export const metadata = SITE_CONFIG;
+export const metadata = {
+  ...SITE_CONFIG,
+  icons: {
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      }
+    ],
+    shortcut: "/favicon.svg",
+  },
+};
 
 export default function RootLayout({
     children,
