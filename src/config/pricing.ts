@@ -11,47 +11,49 @@ export interface PricingItem {
 
 export const PRICING: PricingItem[] = [
   {
-    title: "Starter",
-    description: "One time payment",
-    price: "$450",
-    duration: "one-time",
+    title: "Monthly",
+    description: "Perfect for getting started",
+    price: "$20",
+    duration: "month",
     highlight: "Key features",
     features: [
       "Pre-built e-commerce store",
       "Admin panel to manage products & orders",
       "Payment gateway integration",
-      "Hosting & domain setup assistance"
+      "Hosting & domain setup assistance",
+      "Basic support"
     ],
-    priceId: "price_1R6xr6RwvANxOdCyRqgo4Ebr",
+    priceId: "price_monthly_20",
   },
   {
-    title: "Unlimited Saas",
-    description: "The ultimate agency kit",
-    price: "$199",
-    duration: "month",
-    highlight: "Key features",
+    title: "Yearly",
+    description: "Best value for ongoing projects",
+    price: "$100",
+    duration: "year",
+    highlight: "Everything in Monthly, plus",
     features: [
-      "Everything in Starter & Growth",
-      "Custom design & branding",
-      "Advanced functionality & features",
+      "Everything in Monthly",
       "Priority support",
-      "Marketing & automation setup"
+      "Advanced analytics",
+      "Custom integrations",
+      "2 months free (save $140)"
     ],
-    priceId: "price_1R6xr6RwvANxOdCyo0YauClP",
+    priceId: "price_yearly_100",
   },
   {
-    title: "Basic",
-    description: "For serious agency owners",
-    price: "$49",
-    duration: "month",
-    highlight: "Everything in Starter",
+    title: "Lifetime",
+    description: "One-time payment, lifetime access",
+    price: "$350",
+    duration: "lifetime",
+    highlight: "Everything in Yearly, plus",
     features: [
-      "Everything in Starter",
-      "Ongoing maintenance & updates",
-      "Basic SEO optimization",
-      "Performance monitoring",
-      "Security & backup services"
+      "Everything in Yearly",
+      "Lifetime updates",
+      "Source code access",
+      "White-label rights",
+      "Dedicated support channel",
+      "No recurring fees ever"
     ],
-    priceId: "price_1R6xr6RwvANxOdCy1qKQVCly",
+    priceId: "price_lifetime_350",
   },
 ];
