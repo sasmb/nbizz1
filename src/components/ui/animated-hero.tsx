@@ -23,23 +23,23 @@ function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full">
-      <div className="container mx-auto">
+    <div className="w-full max-w-full overflow-hidden">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <Button variant="secondary" size="sm" className="gap-4">
               Discover NBizz Solutions <MoveRight className="w-4 h-4" />
             </Button>
           </div>
-          <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-4xl tracking-tighter text-center font-regular">
-              <span className="text-primary">Business growth made</span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
-                &nbsp;
+          <div className="flex gap-6 flex-col items-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl max-w-5xl tracking-tighter text-center font-bold leading-tight">
+              <span className="text-foreground dark:text-white">Business growth made</span>
+              <br />
+              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-2 h-16 md:h-20 lg:h-24">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold text-primary"
+                    className="absolute font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent text-4xl md:text-6xl lg:text-7xl"
                     initial={{ opacity: 0, y: "-100" }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
@@ -60,13 +60,13 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center">
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center px-4">
               Transform your business with NBizz's comprehensive suite of AI-powered tools. 
               From website creation to sales automation, content management to marketing campaigns - 
               we've got everything you need to scale your business efficiently.
             </p>
           </div>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <Button size="lg" className="gap-4" variant="outline" asChild>
               <a href="https://cal.com/samogb/30min">
                 Book a consultation <PhoneCall className="w-4 h-4" />

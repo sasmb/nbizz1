@@ -13,9 +13,9 @@ import { buttonVariants } from "@/components/ui/button";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden">
       {/* Hero section - no overflow control */}
-      <section className="w-full relative">
+      <section className="w-full relative max-w-full overflow-x-hidden">
         <MaxWidthWrapper className="flex items-center justify-center">
           <Hero />
         </MaxWidthWrapper>
@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
       
       {/* All other sections with overflow control */}
       <div className="main-content">
-        <section className="w-full py-20">
+        <section className="w-full py-20 max-w-full overflow-x-hidden">
           <MaxWidthWrapper>
             <div className="flex flex-col items-center justify-center py-20 w-full">
               <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
           </MaxWidthWrapper>
         </section>
 
-        <section className="w-full py-20">
+        <section className="w-full py-20 max-w-full overflow-x-hidden">
           <MaxWidthWrapper>
             <div className="flex flex-col items-center justify-center py-20 w-full">
               <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
           </MaxWidthWrapper>
         </section>
 
-        <section className="w-full py-20">
+        <section className="w-full py-20 max-w-full overflow-x-hidden">
           <MaxWidthWrapper>
             <div className="flex flex-col items-center justify-center py-20 w-full">
               <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -72,13 +72,13 @@ const HomePage: React.FC = () => {
           </MaxWidthWrapper>
         </section>
 
-        <section className="w-full py-20">
+        <section className="w-full py-20 max-w-full overflow-x-hidden">
           <MaxWidthWrapper>
             <EnterpriseCard />
           </MaxWidthWrapper>
         </section>
 
-        <section className="w-full py-20">
+        <section className="w-full py-20 max-w-full overflow-x-hidden">
           <MaxWidthWrapper>
             <div className="flex flex-col items-center justify-center py-20 w-full">
               <div className="flex flex-col items-center justify-center max-w-xl mx-auto">

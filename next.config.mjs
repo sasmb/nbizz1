@@ -1,10 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'utfs.io',
-      'your-custom-domain.com', // Replace with your actual domain
-      'subdomain.your-custom-domain.com', // Replace with your subdomain
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'your-custom-domain.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'subdomain.your-custom-domain.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   reactStrictMode: true, // Recommended for better debugging
