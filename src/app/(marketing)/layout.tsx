@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+import { NBizzNavbar } from "@/components/ui/nbizz-navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { DM_Sans } from "next/font/google";
 import { DM_Mono } from "next/font/google";
@@ -33,7 +33,7 @@ export default function MarketingLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <NBizzNavbar />
           <main className="flex-1">
             {children}
           </main>

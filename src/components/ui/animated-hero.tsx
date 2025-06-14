@@ -32,14 +32,14 @@ function Hero() {
             </Button>
           </div>
           <div className="flex gap-6 flex-col items-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl max-w-5xl tracking-tighter text-center font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl max-w-5xl tracking-tighter text-center font-bold leading-tight">
               <span className="text-foreground dark:text-white">Business growth made</span>
               <br />
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-2 h-16 md:h-20 lg:h-24">
+              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-2 h-14 md:h-18 lg:h-20">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent text-4xl md:text-6xl lg:text-7xl"
+                    className="absolute font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent text-3xl md:text-5xl lg:text-6xl"
                     initial={{ opacity: 0, y: "-100" }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
@@ -60,7 +60,7 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center px-4">
+            <p className="text-base md:text-lg leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center px-4">
               Transform your business with NBizz's comprehensive suite of AI-powered tools. 
               From website creation to sales automation, content management to marketing campaigns - 
               we've got everything you need to scale your business efficiently.
