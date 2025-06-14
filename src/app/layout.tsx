@@ -47,8 +47,8 @@ export default function RootLayout({
                     font.className
                 )}
             >
-                {children}
-                <Footer />
+                    {children}
+                    <Footer />
             </body>
         </html>
     );

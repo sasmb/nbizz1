@@ -3,7 +3,7 @@ import React from "react";
 import MaxWidthWrapper from "@/components/ui/max-width-wrapper";
 import HoverPriceCard from "@/components/modules/landing/HoverPriceCard";
 import { EnterpriseCard } from "@/components/modules/landing/EnterpriseCard";
-import { HeroContainerScroll } from "@/components/modules/landing/HeroContainerScroll";
+import { Hero } from "@/components/ui/animated-hero";
 import { InfiniteMovingCards } from "@/components/modules/landing/InfiniteMovingCard";
 import { cn, constructMetadata } from "@/lib/utils";
 import { StickyScroll } from "@/components/modules/landing/StickyScrollReveal";
@@ -17,73 +17,88 @@ const HomePage: React.FC = () => {
       {/* Hero section - no overflow control */}
       <section className="w-full relative">
         <MaxWidthWrapper className="flex items-center justify-center">
-          <HeroContainerScroll />
+          <Hero />
         </MaxWidthWrapper>
         <BackgroundBeams />
       </section>
       
       {/* All other sections with overflow control */}
       <div className="main-content">
-        <section className="w-full py-12">
-          <MaxWidthWrapper className="flex items-center flex-col gap-4 md:mt-20">
-            <h2 className="text-4xl text-center font-medium">
-              Choose what fits you right
-            </h2>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto">
-              Our straightforward pricing plans are tailored to meet your needs.
-              If you&apos;re not ready to commit you can get started for free.
-            </p>
-            <div className="w-full max-w-7xl mx-auto">
+        <section className="w-full py-20">
+          <MaxWidthWrapper>
+            <div className="flex flex-col items-center justify-center py-20 w-full">
+              <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
+                <h2 className="text-4xl md:text-6xl tracking-tighter max-w-xl text-center font-regular">
+                  Pricing Plans
+                </h2>
+                <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center mt-8">
+                  Choose the perfect plan for your business needs. From monthly subscriptions to lifetime access.
+                </p>
+              </div>
               <HoverPriceCard />
-            </div>
-            <div className="w-full max-w-7xl mx-auto">
-              <EnterpriseCard />
             </div>
           </MaxWidthWrapper>
         </section>
 
-        <section className="w-full mt-10 md:mt-20">
-          <InfiniteMovingCards pauseOnHover={false} speed="slow" />
+        <section className="w-full py-20">
+          <MaxWidthWrapper>
+            <div className="flex flex-col items-center justify-center py-20 w-full">
+              <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
+                <h2 className="text-4xl md:text-6xl tracking-tighter max-w-xl text-center font-regular">
+                  Our Features
+                </h2>
+                <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center mt-8">
+                  Discover the powerful tools and features that make NBizz the perfect choice for your business.
+                </p>
+              </div>
+              <StickyScroll />
+            </div>
+          </MaxWidthWrapper>
         </section>
 
-        <section className="w-full mt-10 md:mt-20">
+        <section className="w-full py-20">
           <MaxWidthWrapper>
-            <div className="flex flex-col gap-8 items-center">
-              <h2 className="text-4xl text-center font-medium">
-                Explore new features
-              </h2>
-              <div className="text-muted-foreground text-center">
-                <p>
-                  NBizz does everything possible to provide you with a convenient
-                  tool for managing your agency.
+            <div className="flex flex-col items-center justify-center py-20 w-full">
+              <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
+                <h2 className="text-4xl md:text-6xl tracking-tighter max-w-xl text-center font-regular">
+                  What Our Clients Say
+                </h2>
+                <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center mt-8">
+                  See how NBizz has transformed businesses across different industries.
                 </p>
-                <p>Here are just a few tools that may interest you.</p>
+              </div>
+              <InfiniteMovingCards />
+            </div>
+          </MaxWidthWrapper>
+        </section>
+
+        <section className="w-full py-20">
+          <MaxWidthWrapper>
+            <EnterpriseCard />
+          </MaxWidthWrapper>
+        </section>
+
+        <section className="w-full py-20">
+          <MaxWidthWrapper>
+            <div className="flex flex-col items-center justify-center py-20 w-full">
+              <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
+                <h2 className="text-4xl md:text-6xl tracking-tighter max-w-xl text-center font-regular">
+                  Ready to get started?
+                </h2>
+                <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center mt-8">
+                  Join thousands of businesses that trust NBizz for their growth and automation needs.
+                </p>
+              </div>
+              <div className="flex flex-row gap-4 mt-8">
+                <Link href="https://cal.com/samogb/30min" className={buttonVariants({ variant: "outline", size: "lg" })}>
+                  Book a consultation
+                </Link>
+                <Link href="/pricing" className={buttonVariants({ size: "lg" })}>
+                  Get started now
+                </Link>
               </div>
             </div>
           </MaxWidthWrapper>
-          <StickyScroll />
-        </section>
-
-        <section className="h-[40rem] w-full rounded-md relative flex flex-col items-center justify-center antialiased">
-          <div className="max-w-2xl mx-auto p-4">
-            <h1 className="relative z-10 text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold">
-              Join NBizz
-            </h1>
-            <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
-              Discover the power of seamless agency management with NBizz Agency
-              CRM. Experience the difference today and revolutionize the way you
-              manage your agency with NBizz.
-            </p>
-            <div className="flex justify-center mt-8">
-              <Link
-                href="/agency"
-                className={cn(buttonVariants({ variant: "secondary" }), "w-20")}
-              >
-                Join
-              </Link>
-            </div>
-          </div>
-          <BackgroundBeams />
         </section>
       </div>
     </div>
