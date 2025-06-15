@@ -153,7 +153,7 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0], inde
         {/* Use Case */}
         <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4">
           <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Success Story</h4>
-          <p className="text-sm text-slate-600 dark:text-slate-400 italic">"{solution.useCase}"</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 italic">&quot;{solution.useCase}&quot;</p>
         </div>
 
         {/* Recommended Plan */}

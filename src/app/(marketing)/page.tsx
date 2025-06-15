@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
         <TestimonialsSection />
 
         <section className="w-full py-20 max-w-full overflow-x-hidden">
-          <MaxWidthWrapper>
+        <MaxWidthWrapper>
             <EnterpriseCard />
         </MaxWidthWrapper>
       </section>

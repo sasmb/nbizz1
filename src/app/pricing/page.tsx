@@ -64,7 +64,7 @@ export default function PricingPage() {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Transform your business with NBizz's comprehensive suite of tools. 
+              Transform your business with NBizz&apos;s comprehensive suite of tools. 
               From e-commerce stores to AI automation - everything you need to scale efficiently.
             </p>
 

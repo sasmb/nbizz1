@@ -171,7 +171,7 @@ export function WebCreationShowcase() {
             viewport={{ once: true }}
             className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center"
           >
-            Whether you're selling products with <span className="text-emerald-500 font-semibold">GetReech</span> or booking services with <span className="text-blue-500 font-semibold">NBooking</span>, 
+            Whether you&apos;re selling products with <span className="text-emerald-500 font-semibold">GetReech</span> or booking services with <span className="text-blue-500 font-semibold">NBooking</span>, 
             we provide complete business automation with AI-powered content creation, sales automation, and WhatsApp integration.
           </motion.p>
         </div>

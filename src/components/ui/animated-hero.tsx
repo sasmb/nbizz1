@@ -61,9 +61,9 @@ function Hero() {
             </h1>
 
             <p className="text-base md:text-lg leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center px-4">
-              Transform your business with NBizz's comprehensive suite of AI-powered tools. 
+              Transform your business with NBizz&apos;s comprehensive suite of AI-powered tools. 
               From website creation to sales automation, content management to marketing campaigns - 
-              we've got everything you need to scale your business efficiently.
+              we&apos;ve got everything you need to scale your business efficiently.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
