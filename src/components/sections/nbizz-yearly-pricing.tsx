@@ -129,12 +129,12 @@ export function NBizzYearlyPricing() {
             text: "Start Your Year",
             icon: Calendar,
             chevronIcon: ChevronRight,
-            href: "#get-started",
+            href: "/pricing#yearly",
           }}
           secondaryButton={{
             text: "View Live Demo",
             icon: ExternalLink,
-            href: "#demo",
+            href: "https://demo.nbizz.com",
           }}
           testimonials={testimonials}
           testimonialRotationSpeed={6000}

@@ -27,8 +27,10 @@ function Hero() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
-            <Button variant="secondary" size="sm" className="gap-4">
-              Discover NBizz Solutions <MoveRight className="w-4 h-4" />
+            <Button variant="secondary" size="sm" className="gap-4" asChild>
+              <a href="/solutions">
+                Discover NBizz Solutions <MoveRight className="w-4 h-4" />
+              </a>
             </Button>
           </div>
           <div className="flex gap-6 flex-col items-center">
