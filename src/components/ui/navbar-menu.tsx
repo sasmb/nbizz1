@@ -36,7 +36,7 @@ export const MenuItem = ({
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActive("");
-    }, 150); // 150ms delay before closing
+    }, 150);
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const MenuItem = ({
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white text-sm md:text-base"
       >
         {item}
       </motion.p>
@@ -64,7 +64,7 @@ export const MenuItem = ({
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
-          className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2"
+          className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 w-screen sm:w-auto max-w-screen-sm sm:max-w-none"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -72,7 +72,7 @@ export const MenuItem = ({
             <motion.div
               transition={transition}
               layoutId="active"
-              className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl z-50 relative"
+              className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl z-50 relative mx-4 sm:mx-0"
               style={{ pointerEvents: 'auto' }}
             >
               <motion.div
@@ -101,7 +101,7 @@ export const Menu = ({
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActive(null);
-    }, 300); // Longer delay for the main menu
+    }, 300);
   };
 
   const handleMouseEnter = () => {
@@ -122,7 +122,7 @@ export const Menu = ({
     <nav
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6"
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-2 sm:space-x-4 px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base"
     >
       {children}
     </nav>
@@ -141,19 +141,19 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-md transition-colors">
+    <Link href={href} className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-md transition-colors">
       <Image
         src={src}
         width={140}
         height={70}
         alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
+        className="w-full sm:w-auto h-32 sm:h-auto object-cover rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className="text-lg sm:text-xl font-bold mb-1 text-black dark:text-white">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="text-xs sm:text-sm text-neutral-700 max-w-[10rem] dark:text-neutral-300">
           {description}
         </p>
       </div>
@@ -165,7 +165,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black hover:bg-gray-50 dark:hover:bg-gray-800 px-2 py-1 rounded transition-colors block"
+      className="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 hover:text-black hover:bg-gray-50 dark:hover:bg-gray-800 px-2 py-1 rounded transition-colors block"
     >
       {children}
     </Link>

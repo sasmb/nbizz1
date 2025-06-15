@@ -4,11 +4,23 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import { dark } from '@clerk/themes';
 import { Inter } from "next/font/google"; 
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const font = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    themeColor: [
+        { media: "(prefers-color-scheme: light)", color: "white" },
+        { media: "(prefers-color-scheme: dark)", color: "black" }
+    ]
+};
+
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://nbizz.com"),
     ...SITE_CONFIG,
     icons: {
         icon: [
@@ -28,7 +40,11 @@ export const metadata: Metadata = {
                 url: "/favicon.svg"
             }
         ]
-    }
+    },
+    verification: {
+        google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
+    manifest: "/manifest.json"
 };
 
 export default function RootLayout({
@@ -40,6 +56,12 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <head>
                 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="mobile-web-app-capable" content="yes" />
+                <meta name="msapplication-TileColor" content="#2B5797" />
+                <meta name="msapplication-tap-highlight" content="no" />
             </head>
             <body
                 className={cn(

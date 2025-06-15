@@ -5,9 +5,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu as MenuIcon, X } from "lucide-react";
 
 export function NBizzNavbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseLeave = () => {
@@ -32,7 +34,7 @@ export function NBizzNavbar({ className }: { className?: string }) {
   
   return (
     <div className={cn("fixed top-10 inset-x-0 max-w-6xl mx-auto z-50", className)}>
-      <div className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-between items-center px-8 py-4">
+      <div className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-between items-center px-4 sm:px-8 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image 
@@ -45,11 +47,11 @@ export function NBizzNavbar({ className }: { className?: string }) {
           <span className="text-lg font-medium">NBizz</span>
         </Link>
 
-        {/* Navigation Menu */}
+        {/* Desktop Navigation Menu */}
         <div 
           onMouseLeave={handleMouseLeave}
           onMouseEnter={handleMouseEnter}
-          className="flex justify-center space-x-6"
+          className="hidden md:flex justify-center space-x-6"
         >
           <MenuItem setActive={setActive} active={active} item="Services">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
@@ -109,13 +111,72 @@ export function NBizzNavbar({ className }: { className?: string }) {
           </MenuItem>
         </div>
 
-        {/* CTA Button */}
-        <Link 
-          href="https://cal.com/samogb/30min" 
-          className={buttonVariants({ size: "sm" })}
-        >
-          Book a call
-        </Link>
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-4">
+          <Link 
+            href="https://cal.com/samogb/30min" 
+            className={cn(buttonVariants({ size: "sm" }), "hidden sm:inline-flex")}
+          >
+            Book a call
+          </Link>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <MenuIcon className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 mt-2 p-4 bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg md:hidden">
+            <div className="flex flex-col space-y-4">
+              <div className="space-y-2">
+                <h3 className="font-semibold mb-2">Services</h3>
+                <Link href="/services/website-creation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Website Creation</Link>
+                <Link href="/services/ai-sales-automation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">AI Sales Automation</Link>
+                <Link href="/services/content-creation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Content Creation</Link>
+                <Link href="/services/marketing-automation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Marketing Automation</Link>
+              </div>
+              
+              <div className="space-y-2">
+                <h3 className="font-semibold mb-2">Solutions</h3>
+                <Link href="/solutions" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">All Solutions</Link>
+                <Link href="/solutions#small-business" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Small Business</Link>
+                <Link href="/solutions#agencies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Digital Agencies</Link>
+                <Link href="/solutions#enterprise" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Enterprise</Link>
+                <Link href="/solutions#ecommerce" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">E-commerce</Link>
+              </div>
+              
+              <div className="space-y-2">
+                <h3 className="font-semibold mb-2">Pricing</h3>
+                <Link href="/pricing" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">View All Plans</Link>
+                <Link href="/pricing#monthly" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Monthly - $20/month</Link>
+                <Link href="/pricing#yearly" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Yearly - $100/year</Link>
+                <Link href="/pricing#lifetime" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Lifetime - $350 one-time</Link>
+              </div>
+              
+              <div className="space-y-2">
+                <h3 className="font-semibold mb-2">Resources</h3>
+                <Link href="/docs" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Documentation</Link>
+                <Link href="/blog" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Blog</Link>
+                <Link href="/case-studies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Case Studies</Link>
+                <Link href="/support" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Support</Link>
+              </div>
+
+              <Link 
+                href="https://cal.com/samogb/30min" 
+                className={cn(buttonVariants({ size: "sm" }), "w-full justify-center sm:hidden")}
+              >
+                Book a call
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

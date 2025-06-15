@@ -1,16 +1,29 @@
 import { Pricing } from "@/components/ui/pricing";
-import { PRICING } from "@/config/pricing";
+import { BOOKING_PRICING, ECOMMERCE_PRICING } from "@/config/pricing";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Star, Zap, Rocket, Shield, Users } from "lucide-react";
+import { CheckCircle, Star, Zap, Rocket, Shield, Users, ShoppingBag, Calendar } from "lucide-react";
 import { NBizzNavbar } from "@/components/ui/nbizz-navbar";
 import { CircularRevealHeading } from "@/components/ui/circular-reveal-heading";
 import { TestimonialsSection } from "@/components/ui/testimonials-section";
 
-// Transform the existing pricing data to match the component interface
-const pricingPlans = PRICING.map((item, index) => ({
+// Transform the booking pricing data
+const bookingPlans = BOOKING_PRICING.map((item, index) => ({
   name: item.title.toUpperCase(),
   price: item.price.replace("$", ""),
   yearlyPrice: item.title === "Monthly" ? "16" : item.title === "Yearly" ? "100" : "350",
+  period: item.title === "Lifetime" ? "one-time" : item.duration,
+  features: item.features,
+  description: item.description,
+  buttonText: item.title === "Lifetime" ? "Get Lifetime Access" : `Choose ${item.title}`,
+  href: "/checkout",
+  isPopular: item.title === "Yearly",
+}));
+
+// Transform the e-commerce pricing data
+const ecommercePlans = ECOMMERCE_PRICING.map((item, index) => ({
+  name: item.title.toUpperCase(),
+  price: item.price.replace("$", ""),
+  yearlyPrice: item.title === "Monthly" ? "24" : item.title === "Yearly" ? "149" : "499",
   period: item.title === "Lifetime" ? "one-time" : item.duration,
   features: item.features,
   description: item.description,
@@ -44,7 +57,7 @@ export default function PricingPage() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <NBizzNavbar />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden max-w-full">
+      <section className="relative py-20 lg:py-32 overflow-hidden max-w-full pt-36 lg:pt-44">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800" />
         <div className="relative container mx-auto px-4 max-w-7xl">
           <div className="text-center space-y-8">
@@ -65,7 +78,7 @@ export default function PricingPage() {
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Transform your business with NBizz&apos;s comprehensive suite of tools. 
-              From e-commerce stores to AI automation - everything you need to scale efficiently.
+              Choose between our booking system or e-commerce platform to scale efficiently.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -86,17 +99,36 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Booking System Pricing Section */}
       <section className="relative py-16 max-w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50/20 via-white to-blue-50/20 dark:from-gray-900 dark:via-gray-800/30 dark:to-gray-900" />
-        {/* Seamless transition wave */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-purple-50/30 to-transparent dark:from-gray-800/30 dark:to-transparent" />
         <div className="relative container mx-auto px-4">
+          <div className="flex items-center justify-center gap-2 mb-12">
+            <Calendar className="w-6 h-6 text-blue-600" />
+            <h2 className="text-2xl font-semibold">NBooking Scheduling Site Plans</h2>
+          </div>
           <Pricing 
-            plans={pricingPlans}
-            title="Choose the Perfect Plan for Your Business"
-            description="All plans include our core features with different levels of support and customization.
-Start with any plan and upgrade as your business grows."
+            plans={bookingPlans}
+            title="NBooking: The Ultimate Scheduling Solution"
+            description="Everything you need to launch, automate, and grow your scheduling site. Perfect for service-based businesses, consultants, and professionals who want seamless appointment management, reminders, and calendar integrations."
+          />
+        </div>
+      </section>
+
+      {/* E-commerce Pricing Section */}
+      <section className="relative py-16 max-w-full overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/20 via-white to-purple-50/20 dark:from-gray-900 dark:via-gray-800/30 dark:to-gray-900" />
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-50/30 to-transparent dark:from-gray-800/30 dark:to-transparent" />
+        <div className="relative container mx-auto px-4">
+          <div className="flex items-center justify-center gap-2 mb-12">
+            <ShoppingBag className="w-6 h-6 text-purple-600" />
+            <h2 className="text-2xl font-semibold">E-commerce Store Plans</h2>
+          </div>
+          <Pricing 
+            plans={ecommercePlans}
+            title="Launch Your Online Store"
+            description="Built for retailers and product-based businesses. Get everything you need to sell online, manage inventory, and grow your e-commerce business."
           />
         </div>
       </section>

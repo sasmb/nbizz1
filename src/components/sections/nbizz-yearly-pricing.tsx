@@ -5,68 +5,67 @@ import { SinglePricingCard, type Testimonial } from "@/components/ui/single-pric
 
 export function NBizzYearlyPricing() {
   const features = [
-    "Unlimited Website Creation",
-    "AI-Powered Sales Automation",
-    "Advanced Content Management",
-    "Marketing Campaign Tools",
-    "Custom Domain & Hosting",
-    "Professional Email Setup",
-    "SEO Optimization Tools",
-    "Analytics & Reporting",
+    "Unlimited Booking Pages",
+    "Automated Appointment Reminders",
+    "Google & Outlook Calendar Integration",
+    "Custom Booking Forms",
+    "Payment Processing Integration",
+    "Staff & Resource Management",
+    "Analytics & Reporting for Bookings",
     "24/7 Priority Support",
     "White-Label Solutions",
-    "API Access & Integrations",
-    "Advanced Security Features",
+    "API Access for Scheduling",
+    "Advanced Security for Client Data",
   ].map((text) => ({ text }))
 
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Digital Marketing Manager",
-      company: "TechFlow Solutions",
+      name: "Jessica Lee",
+      role: "Wellness Coach",
+      company: "Thrive Wellness",
       content:
-        "NBizz transformed our entire business workflow. The yearly plan gave us everything we needed to scale from 5 to 50 clients. The ROI was incredible!",
+        "NBooking made it effortless to manage my client appointments. The reminders and calendar sync save me hours every week!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Business Owner",
-      company: "Chen Consulting",
+      name: "Carlos Mendes",
+      role: "Salon Owner",
+      company: "Glow Beauty Studio",
       content:
-        "The AI sales automation alone saved us 20+ hours per week. With the yearly discount, it pays for itself in just 2 months. Best investment we've made.",
+        "My clients love the easy online booking. The yearly plan is a fantastic value for all the features you get!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      role: "Agency Founder",
-      company: "Creative Digital",
+      name: "Priya Patel",
+      role: "Consultant",
+      company: "Patel Consulting",
       content:
-        "We've built over 100 websites for clients using NBizz. The white-label features and yearly pricing make it perfect for agencies. Highly recommended!",
+        "NBooking's analytics and integrations help me keep my business organized and growing. Highly recommended for any service provider!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 4,
-      name: "David Park",
-      role: "E-commerce Director",
-      company: "Park Enterprises",
+      name: "David Kim",
+      role: "Fitness Trainer",
+      company: "FitLife Studio",
       content:
-        "The marketing automation features helped us increase conversions by 300%. The yearly plan is a no-brainer for serious businesses.",
+        "The automated reminders and payment integration have reduced no-shows and made my workflow seamless.",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
     },
     {
       id: 5,
-      name: "Lisa Thompson",
-      role: "Startup Founder",
-      company: "InnovateLab",
+      name: "Emily Nguyen",
+      role: "Therapist",
+      company: "Mindful Path",
       content:
-        "From idea to launch in just 3 weeks! NBizz's comprehensive suite and yearly pricing gave us the foundation to build a million-dollar business.",
+        "From setup to daily use, NBooking is the best scheduling platform I've tried. The yearly plan is a no-brainer!",
       rating: 5,
       avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
     },
@@ -81,10 +80,10 @@ export function NBizzYearlyPricing() {
             <span className="text-xs font-medium">Yearly Plan</span>
           </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-            Scale Your Business with NBizz
+            Scale Your Scheduling Business with NBooking
           </h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-            Everything you need to build, automate, and grow your business - all in one comprehensive yearly plan
+            Everything you need to launch, automate, and grow your scheduling site – all in one comprehensive yearly plan.
           </p>
         </div>
 
@@ -93,8 +92,8 @@ export function NBizzYearlyPricing() {
             icon: Crown,
             text: "Most Popular",
           }}
-          title="NBizz Business Yearly"
-          subtitle="Complete business automation and growth platform with significant yearly savings"
+          title="NBooking Yearly Plan"
+          subtitle="Complete scheduling automation and growth platform with significant yearly savings"
           price={{
             current: "$100/year",
             original: "$240/year",
@@ -145,7 +144,7 @@ export function NBizzYearlyPricing() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10">
             <Users className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">Join 10,000+ businesses already using NBizz</span>
+            <span className="text-sm font-medium">Join 10,000+ businesses already using NBooking</span>
           </div>
         </div>
       </div>
