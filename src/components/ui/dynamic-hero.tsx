@@ -240,19 +240,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <nav className="w-full max-w-screen-md mx-auto flex flex-wrap justify-center sm:justify-between items-center px-4 sm:px-8 py-4 text-sm">
                     {navItems.map((item) => {
                         const commonProps = {
-                            key: item.id,
                             className: "py-2 px-3 sm:px-4 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/10 dark:hover:bg-accent/20 focus:outline-none focus:ring-2 focus:ring-ring transition-colors duration-150 ease-in-out whitespace-nowrap",
                             onClick: item.onClick,
                         };
                         if (item.href) {
                             return (
-                                <a href={item.href} target={item.target} rel={item.target === '_blank' ? 'noopener noreferrer' : undefined} {...commonProps}>
+                                <a key={item.id} href={item.href} target={item.target} rel={item.target === '_blank' ? 'noopener noreferrer' : undefined} {...commonProps}>
                                     {item.label}
                                 </a>
                             );
                         }
                         return (
-                            <button type="button" {...commonProps}>
+                            <button key={item.id} type="button" {...commonProps}>
                                 {item.label}
                             </button>
                         );
