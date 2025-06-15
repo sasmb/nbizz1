@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { PRICING } from "@/config/pricing";
+import { BOOKING_PRICING } from "@/config/pricing";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -75,7 +75,7 @@ const HoverPriceCard: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-full mx-auto">
-      {PRICING.map((price, idx) => (
+      {BOOKING_PRICING.map((price, idx) => (
         <div key={idx} className="relative w-full">
           <AnimatePresence>
             {hoveredIndex === idx && (
