@@ -3,94 +3,104 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import EnhancedBackgroundPaths from "@/components/ui/modern-background-paths";
 import { NBizzNavbar } from "@/components/ui/nbizz-navbar";
-import { Building2, Users, Zap, ShoppingCart, ArrowRight, CheckCircle, Star } from "lucide-react";
+import { ShoppingCart, Calendar, MessageSquare, Bot, ArrowRight, CheckCircle, Star } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
+import { EcommerceFeatures } from "@/components/ui/features-9";
+import { BookingFeatures } from "@/components/ui/features-10";
+import { SocialMediaFeatures } from "@/components/ui/social-media-features";
+import { AIAutomationFeatures } from "@/components/ui/ai-automation-features";
+import { TiltedScrollDemo, TiltedScrollBenefits } from "@/components/ui/tilted-scroll-demo";
+import { GradientButton, GradientButtonLink } from "@/components/ui/gradient-button";
 
-const solutions = [
+const newServices = [
   {
-    id: "small-business",
-    title: "Small Business",
-    icon: Building2,
-    description: "Perfect for startups and growing businesses looking to establish their digital presence",
+    id: "ecommerce",
+    title: "E-commerce Website Creation with MedusaJS",
+    icon: ShoppingCart,
+    description: "Build scalable, headless e-commerce websites using MedusaJS, offering customizable storefronts, secure payment integrations, and robust product management.",
     features: [
-      "Professional website creation with SEO optimization",
-      "AI-powered chat assistants for customer support",
-      "Social media content automation",
-      "Email marketing campaigns",
-      "Lead generation tools"
+      "Headless architecture for flexibility",
+      "Integration with popular payment gateways (Stripe, Paystack)",
+      "Customizable product catalogs and cart functionality",
+      "Multi-currency and multi-language support",
+      "Advanced inventory management"
     ],
     benefits: [
-      "Increase online visibility by 300%",
-      "Automate 80% of customer inquiries",
-      "Generate 5x more qualified leads",
-      "Save 20+ hours per week on marketing"
+      "35% faster page load times",
+      "50% increase in conversion rates",
+      "Seamless mobile shopping experience",
+      "99.9% payment processing uptime"
     ],
-    useCase: "A local bakery uses NBizz to create a stunning website, automate customer orders through AI chat, and run targeted social media campaigns that increased their revenue by 150% in 6 months.",
+    useCase: "A growing fashion retailer implemented our MedusaJS solution and saw 200% revenue growth within 6 months, with customers praising the lightning-fast checkout process and seamless mobile experience.",
+    component: EcommerceFeatures,
+    recommendedPlan: "yearly"
+  },
+  {
+    id: "booking",
+    title: "Booking Websites with Cal.com",
+    icon: Calendar,
+    description: "Develop user-friendly booking platforms using Cal.com for scheduling appointments, meetings, or events with seamless calendar integrations.",
+    features: [
+      "Automated scheduling and reminders",
+      "Integration with Google Calendar, Outlook, etc.",
+      "Customizable booking forms and time slots",
+      "Video conference integration (Zoom, Meet)",
+      "Payment processing for bookings"
+    ],
+    benefits: [
+      "90% reduction in scheduling conflicts",
+      "75% decrease in no-shows with automated reminders",
+      "24/7 booking availability",
+      "Improved customer satisfaction"
+    ],
+    useCase: "A consulting firm automated their entire booking process with our Cal.com integration, reducing administrative work by 15 hours per week and increasing client bookings by 80%.",
+    component: BookingFeatures,
     recommendedPlan: "monthly"
   },
   {
-    id: "agencies",
-    title: "Digital Agencies",
-    icon: Users,
-    description: "Scale your agency operations with white-label solutions and client management tools",
+    id: "social-media",
+    title: "Social Media Content Creation",
+    icon: MessageSquare,
+    description: "Provide tailored social media content strategies, including graphics, videos, and posts to boost brand engagement across platforms like Instagram, Twitter, and LinkedIn.",
     features: [
-      "White-label website creation platform",
-      "Multi-client AI automation management",
-      "Branded content creation tools",
-      "Client reporting dashboards",
-      "Team collaboration features"
+      "Platform-specific content optimization",
+      "High-quality visuals and copywriting",
+      "Scheduling and analytics integration",
+      "Influencer collaboration management",
+      "Brand consistency across platforms"
     ],
     benefits: [
-      "Serve 10x more clients efficiently",
-      "Reduce project delivery time by 70%",
-      "Increase profit margins by 40%",
-      "Automate client reporting"
+      "300% increase in engagement rates",
+      "150% growth in follower count",
+      "85% improvement in brand awareness",
+      "60% more qualified leads from social"
     ],
-    useCase: "A digital marketing agency uses NBizz to manage 50+ client websites, automate content creation, and provide AI-powered customer service, allowing them to scale from 10 to 100 clients.",
+    useCase: "A tech startup leveraged our social media strategy to grow from 500 to 50K followers in 8 months, generating over $2M in revenue directly from social media campaigns.",
+    component: SocialMediaFeatures,
     recommendedPlan: "yearly"
   },
   {
-    id: "enterprise",
-    title: "Enterprise",
-    icon: Zap,
-    description: "Enterprise-grade solutions for large organizations with complex automation needs",
+    id: "ai-automation",
+    title: "AI Automation for Businesses",
+    icon: Bot,
+    description: "Implement AI-driven automation solutions to streamline business processes, such as chatbots, data analysis, and workflow optimization.",
     features: [
-      "Custom AI model training",
-      "Advanced analytics and reporting",
-      "Multi-department automation",
-      "Enterprise security compliance",
-      "Dedicated account management"
+      "Intelligent chatbots for customer service",
+      "Automated data analysis and reporting",
+      "Workflow optimization and task automation",
+      "Predictive analytics for business insights",
+      "Custom AI model development"
     ],
     benefits: [
-      "Reduce operational costs by 60%",
-      "Improve customer satisfaction by 45%",
-      "Automate complex workflows",
-      "Scale globally with confidence"
+      "70% reduction in operational costs",
+      "95% accuracy in predictive analytics",
+      "24/7 automated customer support",
+      "10x faster data processing"
     ],
-    useCase: "A Fortune 500 company uses NBizz to automate customer service across 15 countries, process 100,000+ inquiries monthly, and maintain 99.9% uptime with AI-powered solutions.",
+    useCase: "An e-commerce company implemented our AI automation suite and reduced customer service costs by 80% while improving response times from hours to seconds, leading to 45% higher customer satisfaction.",
+    component: AIAutomationFeatures,
     recommendedPlan: "lifetime"
-  },
-  {
-    id: "ecommerce",
-    title: "E-commerce",
-    icon: ShoppingCart,
-    description: "Boost online sales with AI-powered product recommendations and automated marketing",
-    features: [
-      "AI-powered product recommendations",
-      "Automated abandoned cart recovery",
-      "Dynamic pricing optimization",
-      "Inventory management automation",
-      "Customer behavior analytics"
-    ],
-    benefits: [
-      "Increase conversion rates by 35%",
-      "Recover 25% of abandoned carts",
-      "Optimize pricing for maximum profit",
-      "Reduce manual inventory tasks by 90%"
-    ],
-    useCase: "An online fashion retailer uses NBizz AI to personalize shopping experiences, automate inventory management, and recover abandoned carts, resulting in 200% revenue growth.",
-    recommendedPlan: "yearly"
   }
 ];
 
@@ -100,13 +110,13 @@ const pricingPlans = {
   lifetime: { price: "$350", period: "one-time", savings: "Best Value + Source Code" }
 };
 
-function SolutionCard({ solution, index }: { solution: typeof solutions[0], index: number }) {
-  const Icon = solution.icon;
-  const plan = pricingPlans[solution.recommendedPlan as keyof typeof pricingPlans];
+function ServiceCard({ service, index }: { service: typeof newServices[0], index: number }) {
+  const Icon = service.icon;
+  const plan = pricingPlans[service.recommendedPlan as keyof typeof pricingPlans];
 
   return (
     <motion.div
-      id={solution.id}
+      id={service.id}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -114,21 +124,24 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0], inde
       className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-300 scroll-mt-20"
     >
       <div className="flex items-center gap-4 mb-6">
-        <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
-          <Icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+        <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white">
+          <Icon className="w-8 h-8" />
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{solution.title}</h3>
-          <p className="text-slate-600 dark:text-slate-400">{solution.description}</p>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{service.title}</h3>
+          <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">{service.description.split('.')[0] + '.'}</p>
         </div>
       </div>
 
       <div className="space-y-6">
+        {/* Description */}
+        <p className="text-slate-600 dark:text-slate-400">{service.description}</p>
+
         {/* Features */}
         <div>
           <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Key Features</h4>
           <ul className="space-y-2">
-            {solution.features.map((feature, i) => (
+            {service.features.map((feature, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                 <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                 {feature}
@@ -141,7 +154,7 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0], inde
         <div>
           <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Expected Results</h4>
           <ul className="space-y-2">
-            {solution.benefits.map((benefit, i) => (
+            {service.benefits.map((benefit, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                 <Star className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
                 {benefit}
@@ -153,7 +166,7 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0], inde
         {/* Use Case */}
         <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4">
           <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Success Story</h4>
-          <p className="text-sm text-slate-600 dark:text-slate-400 italic">&quot;{solution.useCase}&quot;</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 italic">&quot;{service.useCase}&quot;</p>
         </div>
 
         {/* Recommended Plan */}
@@ -169,12 +182,9 @@ function SolutionCard({ solution, index }: { solution: typeof solutions[0], inde
                 <span className="text-sm text-green-600 dark:text-green-400 font-medium">{plan.savings}</span>
               )}
             </div>
-            <Link href="/pricing" className="flex-shrink-0">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                Get Started
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+            <GradientButtonLink href="/pricing" size="sm" variant="primary">
+              Get Started
+            </GradientButtonLink>
           </div>
         </div>
       </div>
@@ -193,7 +203,7 @@ export default function SolutionsPage() {
   // Handle hash navigation on page load
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
-    if (hash && solutions.find(s => s.id === hash)) {
+    if (hash && newServices.find(s => s.id === hash)) {
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
@@ -211,8 +221,8 @@ export default function SolutionsPage() {
       {/* Hero Section with Background Paths */}
       <EnhancedBackgroundPaths
         title="Business Solutions"
-        subtitle="Discover how NBizz transforms businesses across industries with AI-powered automation and intelligent tools"
-        buttonText="Explore Solutions"
+        subtitle="Transform your business with our cutting-edge services: E-commerce platforms, booking systems, social media automation, and AI-powered solutions"
+        buttonText="Explore Our Services"
         onButtonClick={scrollToSolutions}
       />
 
@@ -228,18 +238,55 @@ export default function SolutionsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-              Tailored Solutions for Every Business
+              Our Featured Services
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              From startups to enterprises, NBizz provides the tools and automation you need to scale efficiently, 
-              reduce costs, and deliver exceptional customer experiences.
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12">
+              From e-commerce platforms to AI automation, we provide comprehensive solutions 
+              that help businesses scale efficiently and deliver exceptional customer experiences.
             </p>
+            
+            {/* Interactive Feature Showcase */}
+            <div className="grid lg:grid-cols-2 gap-8 items-start mb-16 max-w-4xl mx-auto">
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                  🚀 What We Deliver
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  Cutting-edge solutions that transform your business operations and drive growth.
+                </p>
+                <div className="flex justify-center lg:justify-start">
+                  <TiltedScrollDemo />
+                </div>
+              </div>
+              
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                  📈 Business Impact
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                  Measurable results that exceed expectations and deliver real ROI.
+                </p>
+                <div className="flex justify-center lg:justify-start">
+                  <TiltedScrollBenefits />
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Solutions Grid */}
+          {/* Service Feature Sections */}
+          {newServices.map((service, index) => {
+            const Component = service.component;
+            return (
+              <div key={service.id} className="mb-20">
+                <Component />
+              </div>
+            );
+          })}
+
+          {/* Services Grid */}
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
-            {solutions.map((solution, index) => (
-              <SolutionCard key={solution.id} solution={solution} index={index} />
+            {newServices.map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index} />
             ))}
           </div>
 
@@ -253,34 +300,34 @@ export default function SolutionsPage() {
           >
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                Why Choose NBizz?
+                Why Choose NBizz for Your Digital Transformation?
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                Join thousands of businesses that have transformed their operations with our comprehensive suite of AI-powered tools.
+                Join thousands of businesses that have transformed their operations with our comprehensive suite of modern digital solutions.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ShoppingCart className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Lightning Fast Setup</h4>
-                <p className="text-slate-600 dark:text-slate-400">Get up and running in minutes, not months. Our intuitive platform requires no technical expertise.</p>
+                <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Modern Technology Stack</h4>
+                <p className="text-slate-600 dark:text-slate-400">Built with the latest technologies like MedusaJS, Cal.com, and cutting-edge AI frameworks.</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Proven Results</h4>
-                <p className="text-slate-600 dark:text-slate-400">Our clients see average improvements of 300% in efficiency and 150% in revenue growth.</p>
+                <p className="text-slate-600 dark:text-slate-400">Our clients see average improvements of 200% in efficiency and 150% in revenue growth.</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Bot className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">24/7 Support</h4>
-                <p className="text-slate-600 dark:text-slate-400">Our dedicated team is always here to help you succeed with comprehensive support and training.</p>
+                <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">AI-Powered Solutions</h4>
+                <p className="text-slate-600 dark:text-slate-400">Leverage artificial intelligence to automate processes and gain competitive advantages.</p>
               </div>
             </div>
 
@@ -290,20 +337,15 @@ export default function SolutionsPage() {
                 Ready to Transform Your Business?
               </h4>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
-                Choose the plan that fits your needs and start your automation journey today.
+                Choose the perfect solution for your needs and start your digital transformation journey today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/pricing">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                    View Pricing Plans
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
-                <Link href="https://cal.com/samogb/30min">
-                  <Button size="lg" variant="outline">
-                    Book a Consultation
-                  </Button>
-                </Link>
+                <GradientButtonLink href="/pricing" size="lg" variant="primary">
+                  View All Plans
+                </GradientButtonLink>
+                <GradientButtonLink href="https://cal.com/samogb/30min" size="lg" variant="secondary" external>
+                  Book a Consultation
+                </GradientButtonLink>
               </div>
             </div>
           </motion.div>

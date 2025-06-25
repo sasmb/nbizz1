@@ -64,7 +64,7 @@ export const MenuItem = ({
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
-          className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 w-screen sm:w-auto max-w-screen-sm sm:max-w-none"
+          className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2 w-auto max-w-sm sm:max-w-md"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -72,12 +72,12 @@ export const MenuItem = ({
             <motion.div
               transition={transition}
               layoutId="active"
-              className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl z-50 relative mx-4 sm:mx-0"
+              className="bg-white dark:bg-black backdrop-blur-sm rounded-xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl z-50 relative mx-2 sm:mx-0"
               style={{ pointerEvents: 'auto' }}
             >
               <motion.div
                 layout
-                className="w-max h-full p-4"
+                className="w-full h-full p-3"
               >
                 {children}
               </motion.div>
@@ -141,20 +141,22 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-md transition-colors">
+    <Link href={href} className="flex space-x-3 hover:bg-gray-50 dark:hover:bg-gray-800 p-3 rounded-lg transition-colors group w-full">
       <Image
         src={src}
-        width={140}
-        height={70}
+        width={60}
+        height={40}
         alt={title}
-        className="w-full sm:w-auto h-32 sm:h-auto object-cover rounded-md shadow-2xl"
+        className="w-12 h-8 sm:w-15 sm:h-10 object-cover rounded-md shadow-sm flex-shrink-0"
       />
-      <div>
-        <h4 className="text-lg sm:text-xl font-bold mb-1 text-black dark:text-white">
+      <div className="flex-1 min-w-0 overflow-hidden">
+        <h4 className="text-sm font-semibold mb-1 text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
           {title}
         </h4>
-        <p className="text-xs sm:text-sm text-neutral-700 max-w-[10rem] dark:text-neutral-300">
-          {description}
+        <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-tight overflow-hidden">
+          <span className="line-clamp-2 sm:line-clamp-3">
+            {description}
+          </span>
         </p>
       </div>
     </Link>
@@ -165,7 +167,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 hover:text-black hover:bg-gray-50 dark:hover:bg-gray-800 px-2 py-1 rounded transition-colors block"
+      className="text-sm text-neutral-700 dark:text-neutral-200 hover:text-black hover:bg-gray-50 dark:hover:bg-gray-800 px-3 py-2 rounded-lg transition-colors block truncate"
     >
       {children}
     </Link>

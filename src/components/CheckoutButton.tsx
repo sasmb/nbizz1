@@ -1,5 +1,6 @@
 import { loadStripe } from '@stripe/stripe-js';
 import { useState } from 'react';
+import { GradientButton } from '@/components/ui/gradient-button';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
@@ -39,12 +40,13 @@ export function CheckoutButton() {
   };
 
   return (
-    <button
+    <GradientButton
       onClick={handleCheckout}
       disabled={loading}
-      className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      size="md"
+      variant="primary"
     >
       {loading ? 'Processing...' : 'Get Started'}
-    </button>
+    </GradientButton>
   );
 } 

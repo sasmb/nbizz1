@@ -13,6 +13,7 @@ import { WebCreationShowcase } from "@/components/sections/web-creation-showcase
 import { NBizzYearlyPricing } from "@/components/sections/nbizz-yearly-pricing";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { GradientButtonLink } from "@/components/ui/gradient-button";
 
 const HomePage: React.FC = () => {
   return (
@@ -73,13 +74,13 @@ const HomePage: React.FC = () => {
           </p>
               </div>
               <div className="flex flex-row gap-4 mt-8">
-                <Link href="https://cal.com/samogb/30min" className={buttonVariants({ variant: "outline", size: "lg" })}>
+                <GradientButtonLink href="https://cal.com/samogb/30min" size="lg" variant="secondary" external>
                   Book a consultation
-                </Link>
-                <Link href="/pricing" className={buttonVariants({ size: "lg" })}>
+                </GradientButtonLink>
+                <GradientButtonLink href="/pricing" size="lg" variant="primary">
                   Get started now
-            </Link>
-          </div>
+                </GradientButtonLink>
+              </div>
         </div>
           </MaxWidthWrapper>
       </section>

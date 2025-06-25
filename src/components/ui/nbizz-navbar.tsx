@@ -31,6 +31,31 @@ export function NBizzNavbar({ className }: { className?: string }) {
       }
     };
   }, []);
+
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMobileMenuOpen]);
   
   return (
     <div className={cn("fixed top-10 inset-x-0 max-w-6xl mx-auto z-50", className)}>
@@ -54,7 +79,7 @@ export function NBizzNavbar({ className }: { className?: string }) {
           className="hidden md:flex justify-center space-x-6"
         >
           <MenuItem setActive={setActive} active={active} item="Services">
-            <div className="text-sm grid grid-cols-2 gap-10 p-4">
+            <div className="flex flex-col space-y-1 text-sm w-full max-w-[280px] sm:max-w-[320px]">
               <ProductItem
                 title="Website Creation"
                 href="/services/website-creation"
@@ -83,26 +108,20 @@ export function NBizzNavbar({ className }: { className?: string }) {
           </MenuItem>
           
           <MenuItem setActive={setActive} active={active} item="Solutions">
-            <div className="flex flex-col space-y-4 text-sm">
+            <div className="flex flex-col space-y-1 text-sm w-full max-w-[200px] sm:max-w-[240px]">
               <HoveredLink href="/solutions">All Solutions</HoveredLink>
-              <HoveredLink href="/solutions#small-business">Small Business</HoveredLink>
-              <HoveredLink href="/solutions#agencies">Digital Agencies</HoveredLink>
-              <HoveredLink href="/solutions#enterprise">Enterprise</HoveredLink>
               <HoveredLink href="/solutions#ecommerce">E-commerce</HoveredLink>
             </div>
           </MenuItem>
           
           <MenuItem setActive={setActive} active={active} item="Pricing">
-            <div className="flex flex-col space-y-4 text-sm">
+            <div className="flex flex-col space-y-1 text-sm w-full max-w-[200px] sm:max-w-[240px]">
               <HoveredLink href="/pricing">View All Plans</HoveredLink>
-              <HoveredLink href="/pricing#monthly">Monthly - $20/month</HoveredLink>
-              <HoveredLink href="/pricing#yearly">Yearly - $100/year</HoveredLink>
-              <HoveredLink href="/pricing#lifetime">Lifetime - $350 one-time</HoveredLink>
             </div>
           </MenuItem>
           
           <MenuItem setActive={setActive} active={active} item="Resources">
-            <div className="flex flex-col space-y-4 text-sm">
+            <div className="flex flex-col space-y-1 text-sm w-full max-w-[180px] sm:max-w-[220px]">
               <HoveredLink href="/docs">Documentation</HoveredLink>
               <HoveredLink href="/blog">Blog</HoveredLink>
               <HoveredLink href="/case-studies">Case Studies</HoveredLink>
@@ -131,49 +150,60 @@ export function NBizzNavbar({ className }: { className?: string }) {
           </button>
         </div>
 
+        {/* Mobile Menu Backdrop */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 p-4 bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg md:hidden">
-            <div className="flex flex-col space-y-4">
+          <div className="absolute top-full left-0 right-0 mt-2 mx-2 bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg md:hidden max-h-[calc(100vh-120px)] overflow-y-auto z-50">
+            <div className="p-4 space-y-4">
               <div className="space-y-2">
-                <h3 className="font-semibold mb-2">Services</h3>
-                <Link href="/services/website-creation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Website Creation</Link>
-                <Link href="/services/ai-sales-automation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">AI Sales Automation</Link>
-                <Link href="/services/content-creation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Content Creation</Link>
-                <Link href="/services/marketing-automation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Marketing Automation</Link>
+                <h3 className="font-semibold text-base mb-2">Services</h3>
+                <Link href="/services/website-creation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Website Creation</Link>
+                <Link href="/services/ai-sales-automation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>AI Sales Automation</Link>
+                <Link href="/services/content-creation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Content Creation</Link>
+                <Link href="/services/marketing-automation" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Marketing Automation</Link>
               </div>
               
-              <div className="space-y-2">
-                <h3 className="font-semibold mb-2">Solutions</h3>
-                <Link href="/solutions" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">All Solutions</Link>
-                <Link href="/solutions#small-business" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Small Business</Link>
-                <Link href="/solutions#agencies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Digital Agencies</Link>
-                <Link href="/solutions#enterprise" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Enterprise</Link>
-                <Link href="/solutions#ecommerce" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">E-commerce</Link>
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h3 className="font-semibold text-base mb-2">Solutions</h3>
+                <Link href="/solutions" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>All Solutions</Link>
+                <Link href="/solutions#small-business" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Small Business</Link>
+                <Link href="/solutions#agencies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Digital Agencies</Link>
+                <Link href="/solutions#enterprise" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Enterprise</Link>
+                <Link href="/solutions#ecommerce" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>E-commerce</Link>
               </div>
               
-              <div className="space-y-2">
-                <h3 className="font-semibold mb-2">Pricing</h3>
-                <Link href="/pricing" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">View All Plans</Link>
-                <Link href="/pricing#monthly" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Monthly - $20/month</Link>
-                <Link href="/pricing#yearly" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Yearly - $100/year</Link>
-                <Link href="/pricing#lifetime" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Lifetime - $350 one-time</Link>
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h3 className="font-semibold text-base mb-2">Pricing</h3>
+                <Link href="/pricing" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>View All Plans</Link>
+                <Link href="/pricing#monthly" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Monthly - $20/month</Link>
+                <Link href="/pricing#yearly" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Yearly - $100/year</Link>
+                <Link href="/pricing#lifetime" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Lifetime - $350 one-time</Link>
               </div>
               
-              <div className="space-y-2">
-                <h3 className="font-semibold mb-2">Resources</h3>
-                <Link href="/docs" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Documentation</Link>
-                <Link href="/blog" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Blog</Link>
-                <Link href="/case-studies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Case Studies</Link>
-                <Link href="/support" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">Support</Link>
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h3 className="font-semibold text-base mb-2">Resources</h3>
+                <Link href="/docs" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Documentation</Link>
+                <Link href="/blog" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
+                <Link href="/case-studies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
+                <Link href="/support" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Support</Link>
               </div>
 
-              <Link 
-                href="https://cal.com/samogb/30min" 
-                className={cn(buttonVariants({ size: "sm" }), "w-full justify-center sm:hidden")}
-              >
-                Book a call
-              </Link>
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <Link 
+                  href="https://cal.com/samogb/30min" 
+                  className={cn(buttonVariants({ size: "sm" }), "w-full justify-center")}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Book a call
+                </Link>
+              </div>
             </div>
           </div>
         )}

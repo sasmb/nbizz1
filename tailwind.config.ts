@@ -103,6 +103,14 @@ module.exports = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
         },
+        'skew-scroll': {
+          '0%': {
+            transform: 'rotateX(20deg) rotateZ(-20deg) skewX(20deg)',
+          },
+          '100%': {
+            transform: 'rotateX(20deg) rotateZ(-20deg) skewX(20deg) translateY(-100%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -114,6 +122,7 @@ module.exports = {
         'shimmer': "shimmer 2s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "marquee": "marquee var(--duration) linear infinite",
+        'skew-scroll': 'skew-scroll 20s linear infinite',
       },
     },
   },

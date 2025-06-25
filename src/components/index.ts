@@ -7,6 +7,7 @@ import Footer from "./home/navigation/footer";
 import Icons from "./global/icons";
 import Wrapper from "./global/wrapper";
 import Container from "./global/container";
+import { GradientButton, GradientButtonLink } from "./ui/gradient-button";
 
 export {
     Providers,
@@ -16,4 +17,6 @@ export {
     Wrapper,
     Footer,
     Container,
+    GradientButton,
+    GradientButtonLink,
 }
