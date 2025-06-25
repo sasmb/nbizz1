@@ -198,7 +198,7 @@ const ChatbotDemo = () => (
                 AI
             </div>
             <div className="flex-1 bg-white dark:bg-slate-800 p-3 rounded-lg shadow-sm">
-                <p className="text-sm">I'd be happy to help! Could you provide your order number?</p>
+                <p className="text-sm">I&apos;d be happy to help! Could you provide your order number?</p>
             </div>
         </div>
     </div>

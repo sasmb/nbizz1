@@ -69,7 +69,7 @@ export function EcommerceFeatures() {
                         </span>
 
                         <p className="my-8 text-2xl font-semibold">
-                            Monitor your store's performance in real-time. <span className="text-muted-foreground"> Track orders, revenue, and customer behavior.</span>
+                            Monitor your store&apos;s performance in real-time. <span className="text-muted-foreground"> Track orders, revenue, and customer behavior.</span>
                         </p>
                     </div>
                     <MonitoringChart />
