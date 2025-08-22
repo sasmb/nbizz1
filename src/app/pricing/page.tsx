@@ -22,15 +22,28 @@ const bookingPlans = BOOKING_PRICING.map((item, index) => ({
 // Transform the e-commerce pricing data
 const ecommercePlans = ECOMMERCE_PRICING.map((item, index) => ({
   name: item.title.toUpperCase(),
-  price: item.price.replace("$", "").replace("+", ""),
-  yearlyPrice: item.designFee ? item.designFee.replace("$", "").replace("+", "") : item.price.replace("$", ""),
-  period: item.duration,
+  // Monthly view shows recurring payments, yearly view shows one-time design fees
+  price: item.title === "6-Month Commitment" ? "60" : // Base $60/month with 40% discount
+         item.title === "Base Package" ? "100" : // Monthly recurring fee
+         item.title === "Premium Package" ? "200" : "100", // Monthly recurring fee
+  yearlyPrice: item.title === "6-Month Commitment" ? "120" : // Premium $120/month with 40% discount
+               item.title === "Base Package" ? "500" : // One-time design fee
+               item.title === "Premium Package" ? "1200" : "500", // One-time design fee
+  period: item.title === "6-Month Commitment" ? "month" : 
+          item.duration === "one-time" ? "one-time" : "month",
   features: item.features,
   description: item.description,
   buttonText: item.title === "6-Month Commitment" ? "Get Discount" : 
                item.title === "Premium Package" ? "Get Custom Quote" : 
                `Choose ${item.title}`,
-  href: "/checkout",
+  // Stripe payment links based on package and billing type
+  href: item.title === "Base Package" ? "https://buy.stripe.com/3cI00l64L5FNecQ6HG73G03" : // $100/month Base
+        item.title === "Premium Package" ? "https://buy.stripe.com/14AbJ3ct92tB6Ko0ji73G02" : // $200/month Premium
+        "https://buy.stripe.com/6oUdRb3WD1px5Gk4zy73G06", // $60/month 6-month commitment (Base)
+  // Additional href for design fees (one-time payments)
+  designHref: item.title === "Base Package" ? "https://buy.stripe.com/9B67sN64L2tB5Gk8PO73G05" : // $500 Base design
+              item.title === "Premium Package" ? "https://buy.stripe.com/8x29AV8cT1px2u84zy73G04" : // $1200 Premium design
+              "https://buy.stripe.com/00wfZjdxd6JR1q42rq73G07", // $120/month 6-month commitment (Premium)
   isPopular: item.isPopular || false,
   designFee: item.designFee,
   monthlyFee: item.monthlyFee,

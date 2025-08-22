@@ -22,6 +22,7 @@ interface PricingPlan {
   description: string;
   buttonText: string;
   href: string;
+  designHref?: string;
   isPopular: boolean;
 }
 
@@ -92,7 +93,7 @@ export function Pricing({
           </Label>
         </label>
         <span className="ml-2 font-semibold">
-          Annual billing <span className="text-primary">(Save 20%)</span>
+          View design fees <span className="text-muted-foreground">(one-time)</span>
         </span>
       </div>
 
@@ -172,7 +173,7 @@ export function Pricing({
               </div>
 
               <p className="text-xs leading-5 text-muted-foreground">
-                {isMonthly ? "billed monthly" : "billed annually"}
+                {isMonthly ? "monthly payment" : "one-time design fee"}
               </p>
 
               <ul className="mt-5 gap-2 flex flex-col">
@@ -188,7 +189,7 @@ export function Pricing({
 
               <div className="w-full flex justify-center">
                 <GradientButtonLink
-                  href={plan.href}
+                  href={isMonthly ? plan.href : (plan.designHref || plan.href)}
                   size="md"
                   variant={plan.isPopular ? "primary" : "secondary"}
                   className="w-full max-w-xs"

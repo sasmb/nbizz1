@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
       <ClientLogosSection />
       
       {/* NBizz Yearly Pricing - Featured Plan */}
-      <NBizzYearlyPricing />
+     {/* <NBizzYearlyPricing /> */}
       
       {/* All other sections with overflow control */}
       <div className="main-content">

@@ -96,9 +96,9 @@ export const ECOMMERCE_PRICING: PricingItem[] = [
   {
     title: "Premium Package",
     description: "Fully bespoke e-commerce site designed from scratch for your unique vision",
-    price: "$1,000+",
+    price: "$1,200",
     duration: "one-time",
-    designFee: "$1,000+",
+    designFee: "$1,200",
     monthlyFee: "$200",
     deliveryTime: "2-3 weeks",
     supportHours: "4 hours/month",
@@ -114,7 +114,7 @@ export const ECOMMERCE_PRICING: PricingItem[] = [
       "Advanced integrations",
       "Complex feature development"
     ],
-    priceId: "price_ecom_premium_1000",
+    priceId: "price_ecom_premium_1200",
     type: "ecommerce"
   },
   {
