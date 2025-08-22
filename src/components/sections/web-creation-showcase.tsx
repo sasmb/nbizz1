@@ -58,6 +58,7 @@ export function WebCreationShowcase() {
       description: "Complete online stores with inventory management, payment processing, and customer analytics. Perfect for retail businesses ready to sell online.",
       href: "/services/website-creation",
       cta: "Build Your Store",
+      category: "E-commerce",
       background: (
         <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-muted/5 to-transparent">
           <div className="absolute top-4 right-4 w-32 h-32 bg-muted/10 rounded-full blur-xl" />
@@ -72,6 +73,7 @@ export function WebCreationShowcase() {
       description: "Professional booking systems for consultants, salons, clinics, and service providers. Automated scheduling with payment integration.",
       href: "/services/website-creation",
       cta: "Start Booking",
+      category: "Scheduling",
       background: (
         <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-muted/5 to-transparent">
           <div className="absolute top-4 left-4 w-28 h-28 bg-muted/10 rounded-full blur-xl" />
@@ -314,11 +316,21 @@ export function WebCreationShowcase() {
             </p>
           </div>
           
-          <BentoGrid className="lg:grid-rows-3 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 max-w-6xl mx-auto lg:grid-rows-3">
             {features.map((feature) => (
-              <BentoCard key={feature.name} {...feature} />
+              <BentoCard 
+                key={feature.name} 
+                item={{
+                  title: feature.name,
+                  description: feature.description,
+                  icon: <feature.Icon className="w-4 h-4" />,
+                  status: "Active",
+                  tags: [feature.category],
+                  cta: feature.cta
+                }} 
+              />
             ))}
-          </BentoGrid>
+          </div>
         </motion.div>
 
         {/* Call to Action */}
