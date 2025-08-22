@@ -1,5 +1,5 @@
 import { Pricing } from "@/components/ui/pricing";
-import { BOOKING_PRICING, ECOMMERCE_PRICING } from "@/config/pricing";
+import { BOOKING_PRICING, ECOMMERCE_PRICING, ECOMMERCE_ADDONS } from "@/config/pricing";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Star, Zap, Rocket, Shield, Users, ShoppingBag, Calendar } from "lucide-react";
 import { NBizzNavbar } from "@/components/ui/nbizz-navbar";
@@ -22,14 +22,20 @@ const bookingPlans = BOOKING_PRICING.map((item, index) => ({
 // Transform the e-commerce pricing data
 const ecommercePlans = ECOMMERCE_PRICING.map((item, index) => ({
   name: item.title.toUpperCase(),
-  price: item.price.replace("$", ""),
-  yearlyPrice: item.title === "Monthly" ? "24" : item.title === "Yearly" ? "149" : "499",
-  period: item.title === "Lifetime" ? "one-time" : item.duration,
+  price: item.price.replace("$", "").replace("+", ""),
+  yearlyPrice: item.designFee ? item.designFee.replace("$", "").replace("+", "") : item.price.replace("$", ""),
+  period: item.duration,
   features: item.features,
   description: item.description,
-  buttonText: item.title === "Lifetime" ? "Get Lifetime Access" : `Choose ${item.title}`,
+  buttonText: item.title === "6-Month Commitment" ? "Get Discount" : 
+               item.title === "Premium Package" ? "Get Custom Quote" : 
+               `Choose ${item.title}`,
   href: "/checkout",
-  isPopular: item.title === "Yearly",
+  isPopular: item.isPopular || false,
+  designFee: item.designFee,
+  monthlyFee: item.monthlyFee,
+  deliveryTime: item.deliveryTime,
+  supportHours: item.supportHours,
 }));
 
 // NBizz circular data
@@ -127,9 +133,45 @@ export default function PricingPage() {
           </div>
           <Pricing 
             plans={ecommercePlans}
-            title="Launch Your Online Store"
-            description="Built for retailers and product-based businesses. Get everything you need to sell online, manage inventory, and grow your e-commerce business."
+            title="Custom E-commerce with Medusa.js"
+            description="Professional e-commerce websites powered by Medusa.js. Choose between semi-custom templates or fully bespoke designs. Includes one-time design fee + monthly hosting & maintenance."
           />
+        </div>
+      </section>
+
+      {/* E-commerce Add-ons Section */}
+      <section className="relative py-16 max-w-full overflow-hidden bg-gray-50/50 dark:bg-gray-900/50">
+        <div className="relative container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-semibold mb-4">Optional Add-ons</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Enhance your e-commerce store with additional features and integrations
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {ECOMMERCE_ADDONS.map((addon, index) => (
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+                <h4 className="font-semibold text-lg mb-2">{addon.title}</h4>
+                <p className="text-sm text-muted-foreground mb-4">{addon.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xl font-bold text-primary">{addon.price}</span>
+                  <span className="text-sm text-muted-foreground">{addon.duration}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground mb-4">
+              Need something custom? We offer tailored solutions for your specific business needs.
+            </p>
+            <Button variant="outline" asChild>
+              <a href="https://cal.com/samogb/30min">
+                Request Custom Quote
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 

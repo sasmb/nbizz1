@@ -122,12 +122,19 @@ export function NBizzNavbar({ className }: { className?: string }) {
           
           <MenuItem setActive={setActive} active={active} item="Resources">
             <div className="flex flex-col space-y-1 text-sm w-full max-w-[180px] sm:max-w-[220px]">
-              <HoveredLink href="/docs">Documentation</HoveredLink>
+              <HoveredLink href="/faqs">FAQs</HoveredLink>
               <HoveredLink href="/blog">Blog</HoveredLink>
               <HoveredLink href="/case-studies">Case Studies</HoveredLink>
               <HoveredLink href="/support">Support</HoveredLink>
             </div>
           </MenuItem>
+          
+          <Link 
+            href="/getreech" 
+            className="font-bold cursor-pointer text-black hover:opacity-[0.9] dark:text-white text-sm md:text-base"
+          >
+            getreech
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -189,10 +196,14 @@ export function NBizzNavbar({ className }: { className?: string }) {
               
               <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                 <h3 className="font-semibold text-base mb-2">Resources</h3>
-                <Link href="/docs" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Documentation</Link>
+                <Link href="/faqs" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>FAQs</Link>
                 <Link href="/blog" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
                 <Link href="/case-studies" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
                 <Link href="/support" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>Support</Link>
+              </div>
+              
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <Link href="/getreech" className="font-bold block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded text-sm" onClick={() => setIsMobileMenuOpen(false)}>getreech</Link>
               </div>
 
               <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
