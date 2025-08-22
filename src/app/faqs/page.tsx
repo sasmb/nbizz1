@@ -95,10 +95,6 @@ const ECOMMERCE_FAQS = [
 ];
 
 export default function FaqPage() {
-  const handleContactSupport = () => {
-    // Redirect to contact or cal.com link
-    window.open("https://cal.com/samogb/30min", "_blank");
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -136,12 +132,6 @@ export default function FaqPage() {
         title="E-Commerce Website Service FAQs"
         description="Find answers to common questions about our custom Medusa.js e-commerce solutions, pricing, and support."
         items={ECOMMERCE_FAQS}
-        contactInfo={{
-          title: "Still have questions?",
-          description: "We're here to help! Book a free consultation to discuss your specific needs.",
-          buttonText: "Book Free Consultation",
-          onContact: handleContactSupport,
-        }}
         className="bg-gray-50/50 dark:bg-gray-900/50"
       />
     </div>
