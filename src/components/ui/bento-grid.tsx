@@ -153,8 +153,7 @@ function BentoGrid({ items = itemsSample }: BentoGridProps) {
     );
 }
 
-// Export individual item type for external use
-export type { BentoItem };
+// BentoItem type is already exported above
 
 // Create a BentoCard component that can be used standalone
 export const BentoCard = ({ item, className }: { item: BentoItem; className?: string }) => {

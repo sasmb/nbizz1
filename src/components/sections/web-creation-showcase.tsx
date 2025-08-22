@@ -325,7 +325,7 @@ export function WebCreationShowcase() {
                   description: feature.description,
                   icon: <feature.Icon className="w-4 h-4" />,
                   status: "Active",
-                  tags: [feature.category],
+                  tags: feature.category ? [feature.category] : [],
                   cta: feature.cta
                 }} 
               />
