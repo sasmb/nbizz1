@@ -19,7 +19,7 @@ export function ReechProblemsSolved() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         The Problems{" "}
                         <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                            You're Facing
+                            You&apos;re Facing
                         </span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export function ReechProblemsSolved() {
                             Limited Revenue Options
                         </h3>
                         <p className="text-orange-700 dark:text-orange-300">
-                            Traditional payment methods are complex and don't integrate well with social media business models.
+                            Traditional payment methods are complex and don&apos;t integrate well with social media business models.
                         </p>
                     </div>
 
@@ -61,7 +61,7 @@ export function ReechProblemsSolved() {
                             No Professional Presence
                         </h3>
                         <p className="text-amber-700 dark:text-amber-300">
-                            Social media profiles look amateur and don't give customers confidence in your business legitimacy.
+                            Social media profiles look amateur and don&apos;t give customers confidence in your business legitimacy.
                         </p>
                     </div>
                 </div>

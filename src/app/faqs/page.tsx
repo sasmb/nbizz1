@@ -9,7 +9,7 @@ const ECOMMERCE_FAQS = [
   },
   {
     question: "What is Medusa.js, and why do you use it?",
-    answer: "Medusa.js is a powerful, open-source e-commerce platform that's highly customizable and cost-effective. Unlike platforms like Shopify, it's free to use, with no transaction fees, giving you more control over your store's design and functionality. We choose Medusa because it allows us to create unique, scalable sites quickly while keeping your costs low. Its modular setup and admin dashboard make it easy for you to manage your store without needing constant technical support.",
+    answer: "Medusa.js is a powerful, open-source e-commerce platform that&apos;s highly customizable and cost-effective. Unlike platforms like Shopify, it&apos;s free to use, with no transaction fees, giving you more control over your store&apos;s design and functionality. We choose Medusa because it allows us to create unique, scalable sites quickly while keeping your costs low. Its modular setup and admin dashboard make it easy for you to manage your store without needing constant technical support.",
     category: "Technology",
   },
   {
@@ -19,7 +19,7 @@ const ECOMMERCE_FAQS = [
   },
   {
     question: "What's included in the subscription fee?",
-    answer: "The subscription covers hosting (on Railway or Nomodo), security patches, minor updates (like plugin tweaks), and chatbot maintenance. It also includes a set number of support hours (2 for Standard, 4 for Premium) for troubleshooting or minor adjustments. This ensures your site stays online, secure, and functional without you needing to worry about technical details. You'll manage day-to-day tasks like adding products through the Medusa admin dashboard.",
+    answer: "The subscription covers hosting (on Railway or Nomodo), security patches, minor updates (like plugin tweaks), and chatbot maintenance. It also includes a set number of support hours (2 for Standard, 4 for Premium) for troubleshooting or minor adjustments. This ensures your site stays online, secure, and functional without you needing to worry about technical details. You&apos;ll manage day-to-day tasks like adding products through the Medusa admin dashboard.",
     category: "Pricing",
   },
   {
@@ -34,62 +34,62 @@ const ECOMMERCE_FAQS = [
   },
   {
     question: "How much maintenance will my site need, and will I have to do it?",
-    answer: "We've designed the service to minimize maintenance. The subscription covers routine tasks like security patches, plugin updates, and chatbot functionality checks, handled by us within your tier's support hours. You'll manage everyday tasks like adding products or updating prices through Medusa's user-friendly admin dashboard—we'll provide a tutorial and documentation to make this easy. Major changes, like adding new features, aren't covered by the subscription and will be quoted separately.",
+    answer: "We&apos;ve designed the service to minimize maintenance. The subscription covers routine tasks like security patches, plugin updates, and chatbot functionality checks, handled by us within your tier&apos;s support hours. You&apos;ll manage everyday tasks like adding products or updating prices through Medusa&apos;s user-friendly admin dashboard—we&apos;ll provide a tutorial and documentation to make this easy. Major changes, like adding new features, aren&apos;t covered by the subscription and will be quoted separately.",
     category: "Support",
   },
   {
     question: "Can I manage my site myself?",
-    answer: "Absolutely! Medusa's admin dashboard lets you handle inventory, orders, and content updates without technical skills. We'll set it up for you and provide a quick-start guide to get you comfortable. For anything complex, like troubleshooting or updates, we've got you covered under the subscription's support hours.",
+    answer: "Absolutely! Medusa&apos;s admin dashboard lets you handle inventory, orders, and content updates without technical skills. We&apos;ll set it up for you and provide a quick-start guide to get you comfortable. For anything complex, like troubleshooting or updates, we&apos;ve got you covered under the subscription&apos;s support hours.",
     category: "Support",
   },
   {
     question: "What if I want to change my site's design later?",
-    answer: "The initial design fee includes up to two rounds of revisions during the build phase. After launch, minor tweaks (like updating colors) can often be handled within your subscription's support hours. Major redesigns or new features (e.g., adding a loyalty program) will be quoted separately to reflect the additional work. We'll always discuss costs upfront to avoid surprises.",
+    answer: "The initial design fee includes up to two rounds of revisions during the build phase. After launch, minor tweaks (like updating colors) can often be handled within your subscription&apos;s support hours. Major redesigns or new features (e.g., adding a loyalty program) will be quoted separately to reflect the additional work. We&apos;ll always discuss costs upfront to avoid surprises.",
     category: "Service Overview",
   },
   {
     question: "How long does it take to get my site?",
-    answer: "Base Package: About 2 weeks, assuming timely feedback on designs. Premium Package: 2–3 weeks, depending on complexity and your input. We'll provide a detailed timeline when you sign the contract, and we'll keep you updated throughout the process.",
+    answer: "Base Package: About 2 weeks, assuming timely feedback on designs. Premium Package: 2–3 weeks, depending on complexity and your input. We&apos;ll provide a detailed timeline when you sign the contract, and we&apos;ll keep you updated throughout the process.",
     category: "Timeline",
   },
   {
     question: "What happens if my site has high traffic and hosting costs go up?",
-    answer: "Railway's hosting costs scale with traffic, but we'll optimize your site to keep usage low (e.g., pausing resources during low-traffic periods). If costs rise significantly, we can switch to Nomodo's flat $15/month plan to keep your subscription predictable. We'll monitor usage and discuss options with you to ensure cost efficiency, all covered by your subscription fee.",
+    answer: "Railway&apos;s hosting costs scale with traffic, but we&apos;ll optimize your site to keep usage low (e.g., pausing resources during low-traffic periods). If costs rise significantly, we can switch to Nomodo&apos;s flat $15/month plan to keep your subscription predictable. We&apos;ll monitor usage and discuss options with you to ensure cost efficiency, all covered by your subscription fee.",
     category: "Technical",
   },
   {
     question: "Can I cancel my subscription?",
-    answer: "Yes, you can cancel with 30 days' notice. The initial design fee is non-refundable once work begins, but you're not locked into the subscription long-term. If you cancel, we'll help transition your site to another host or provide your site's data, though additional fees may apply for migration support.",
+    answer: "Yes, you can cancel with 30 days&apos; notice. The initial design fee is non-refundable once work begins, but you&apos;re not locked into the subscription long-term. If you cancel, we&apos;ll help transition your site to another host or provide your site&apos;s data, though additional fees may apply for migration support.",
     category: "Billing",
   },
   {
     question: "What if I need extra features, like multi-language support?",
-    answer: "Features like multi-language support, advanced cart options, or custom integrations can be added as optional add-ons. We'll quote these based on the scope of work, ensuring transparency. For example, a basic analytics setup is a $50 one-time fee, while more complex features will be estimated after discussing your needs.",
+    answer: "Features like multi-language support, advanced cart options, or custom integrations can be added as optional add-ons. We&apos;ll quote these based on the scope of work, ensuring transparency. For example, a basic analytics setup is a $50 one-time fee, while more complex features will be estimated after discussing your needs.",
     category: "Features",
   },
   {
     question: "Do I own my website?",
-    answer: "Once the initial design fee is fully paid, you own the site's design and content. Medusa.js is open-source, so there are no licensing fees. Hosting and maintenance are managed through your subscription, and if you cancel, we can help transfer your site to another host (additional fees may apply).",
+    answer: "Once the initial design fee is fully paid, you own the site&apos;s design and content. Medusa.js is open-source, so there are no licensing fees. Hosting and maintenance are managed through your subscription, and if you cancel, we can help transfer your site to another host (additional fees may apply).",
     category: "Legal",
   },
   {
     question: "How do payments work?",
-    answer: "Design Fee: 50% upfront to start work, 50% upon completion, payable via Stripe or bank transfer. Subscription Fee: Billed monthly, or upfront for 6 months to get the 40% discount. Add-Ons/Extra Support: Billed upon completion or as agreed. We'll provide clear invoices and payment instructions when you sign the contract.",
+    answer: "Design Fee: 50% upfront to start work, 50% upon completion, payable via Stripe or bank transfer. Subscription Fee: Billed monthly, or upfront for 6 months to get the 40% discount. Add-Ons/Extra Support: Billed upon completion or as agreed. We&apos;ll provide clear invoices and payment instructions when you sign the contract.",
     category: "Billing",
   },
   {
     question: "How do you make the site scalable and low-maintenance?",
-    answer: "We use Medusa's modular architecture to build scalable sites that grow with your business. Pre-built templates and plugins (like Tidio for chatbots) speed up development while maintaining customization. Automated tools, like Railway's CI/CD pipelines and Medusa's webhooks, handle updates and monitor site health, reducing manual maintenance. This lets us focus on delivering new sites while keeping your store running smoothly.",
+    answer: "We use Medusa&apos;s modular architecture to build scalable sites that grow with your business. Pre-built templates and plugins (like Tidio for chatbots) speed up development while maintaining customization. Automated tools, like Railway&apos;s CI/CD pipelines and Medusa&apos;s webhooks, handle updates and monitor site health, reducing manual maintenance. This lets us focus on delivering new sites while keeping your store running smoothly.",
     category: "Technical",
   },
   {
     question: "What if I have more questions or need help after launch?",
-    answer: "We're here for you! Your subscription includes support hours (2 for Standard, 4 for Premium) for troubleshooting or questions. For additional help, we offer premium support at $50/hour. You can also reach out anytime via email or phone, and we'll respond promptly.",
+    answer: "We&apos;re here for you! Your subscription includes support hours (2 for Standard, 4 for Premium) for troubleshooting or questions. For additional help, we offer premium support at $50/hour. You can also reach out anytime via email or phone, and we&apos;ll respond promptly.",
     category: "Support",
   },
   {
     question: "How do I get started?",
-    answer: "It's simple: 1) Review and sign the service agreement. 2) Choose your design package (Base or Premium) and subscription tier (Standard or Premium). 3) Share your branding materials (logos, colors, etc.) and any specific requirements. We'll kick off the design process and deliver your site in 2–3 weeks, keeping you updated every step of the way.",
+    answer: "It&apos;s simple: 1) Review and sign the service agreement. 2) Choose your design package (Base or Premium) and subscription tier (Standard or Premium). 3) Share your branding materials (logos, colors, etc.) and any specific requirements. We&apos;ll kick off the design process and deliver your site in 2–3 weeks, keeping you updated every step of the way.",
     category: "Getting Started",
   },
 ];
@@ -125,7 +125,7 @@ export default function FaqPage() {
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Everything you need to know about our e-commerce website services using Medusa.js. 
-              From pricing to technical details, we've got you covered.
+              From pricing to technical details, we&apos;ve got you covered.
             </p>
           </div>
         </div>
