@@ -97,11 +97,11 @@ export function HeroSection() {
                         
                                     <h1
                                         className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-bold">
-                                        Build Your Complete Business Brand
+                                        AI Agents for E-commerce Brands
                                     </h1>
                                     <p
                                         className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                                        Transform your business with a complete online store, custom domain, checkout assistant, and marketing tools. Stop depending on social media alone - own your digital presence.
+                                        Describe your store and get a complete e-commerce website in minutes. But it doesn't stop there - you also get a 24/7 AI agent that manages your store, handles customers, and grows your business while you sleep.
                                     </p>
                                 </AnimatedGroup>
 

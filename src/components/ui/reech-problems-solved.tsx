@@ -9,6 +9,7 @@ import {
     CheckCircle,
     ArrowRight 
 } from "lucide-react";
+import Link from "next/link";
 
 export function ReechProblemsSolved() {
     return (
@@ -114,9 +115,11 @@ export function ReechProblemsSolved() {
                             </li>
                         </ul>
                         
-                        <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                            Choose Subscription
-                            <ArrowRight className="w-4 h-4 ml-2" />
+                        <Button className="w-full bg-green-600 hover:bg-green-700 text-white" asChild>
+                            <Link href="/pricing#monthly">
+                                Choose Subscription
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
                         </Button>
                     </div>
 
@@ -154,9 +157,11 @@ export function ReechProblemsSolved() {
                             </li>
                         </ul>
                         
-                        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                            Choose Commission
-                            <ArrowRight className="w-4 h-4 ml-2" />
+                        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                            <Link href="/pricing#yearly">
+                                Choose Commission
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
                         </Button>
                     </div>
                 </div>
@@ -165,8 +170,10 @@ export function ReechProblemsSolved() {
                     <p className="text-sm text-muted-foreground mb-4">
                         Not sure which model is right for you?
                     </p>
-                    <Button variant="outline" size="lg">
-                        Schedule a Free Consultation
+                    <Button variant="outline" size="lg" asChild>
+                        <Link href="https://cal.com/samogb/30min" target="_blank">
+                            Schedule a Free Consultation
+                        </Link>
                     </Button>
                 </div>
             </div>
