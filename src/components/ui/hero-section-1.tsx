@@ -78,7 +78,7 @@ export function HeroSection() {
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
                                     <Link
-                                        href="#features"
+                                        href="/getreech/waitlist"
                                         className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
                                         <span className="text-foreground text-sm">New: Complete E-commerce Solutions</span>
                                         <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
@@ -178,7 +178,7 @@ export function HeroSection() {
                     <div className="group relative m-auto max-w-5xl px-6">
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
                             <Link
-                                href="#success-stories"
+                                href="/getreech/waitlist"
                                 className="block text-sm duration-150 hover:opacity-75">
                                 <span>Meet Our Success Stories</span>
                                 <ChevronRight className="ml-1 inline-block size-3" />
@@ -234,10 +234,10 @@ export function HeroSection() {
 }
 
 const menuItems = [
-    { name: 'Features', href: '#features' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Case Studies', href: '#case-studies' },
+    { name: 'Features', href: '/getreech/waitlist' },
+    { name: 'Solutions', href: '/getreech/waitlist' },
+    { name: 'Pricing', href: '/getreech/waitlist' },
+    { name: 'Case Studies', href: '/getreech/waitlist' },
 ]
 
 const HeroHeader = () => {
@@ -310,7 +310,7 @@ const HeroHeader = () => {
                                     variant="outline"
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#login">
+                                    <Link href="/getreech/waitlist">
                                         <span>Login</span>
                                     </Link>
                                 </Button>
@@ -318,7 +318,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#signup">
+                                    <Link href="/getreech/waitlist">
                                         <span>Start Free</span>
                                     </Link>
                                 </Button>
@@ -326,7 +326,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#get-started">
+                                    <Link href="/getreech/waitlist">
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>

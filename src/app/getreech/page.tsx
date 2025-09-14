@@ -127,7 +127,7 @@ export default function GetReechPage() {
               Learn more about the technology behind getreech.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/blog">
+              <Link href="/getreech/waitlist">
                 <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
                   Read Our Blog
                   <ArrowRight className="ml-2 h-4 w-4" />
