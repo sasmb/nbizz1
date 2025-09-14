@@ -255,7 +255,7 @@ export default function CaseStudiesPage() {
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               Join the growing list of businesses that have transformed their operations 
-              with NBizz's AI-powered solutions.
+              with NBizz&apos;s AI-powered solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

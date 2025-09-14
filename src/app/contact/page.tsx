@@ -45,7 +45,7 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ready to transform your business? We'd love to hear from you. Reach out and let's discuss how NBizz can help you achieve your goals.
+              Ready to transform your business? We&apos;d love to hear from you. Reach out and let&apos;s discuss how NBizz can help you achieve your goals.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>

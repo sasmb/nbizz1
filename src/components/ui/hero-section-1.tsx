@@ -101,7 +101,7 @@ export function HeroSection() {
                                     </h1>
                                     <p
                                         className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                                        Describe your store and get a complete e-commerce website in minutes. But it doesn't stop there - you also get a 24/7 AI agent that manages your store, handles customers, and grows your business while you sleep.
+                                        Describe your store and get a complete e-commerce website in minutes. But it doesn&apos;t stop there - you also get a 24/7 AI agent that manages your store, handles customers, and grows your business while you sleep.
                                     </p>
                                 </AnimatedGroup>
 

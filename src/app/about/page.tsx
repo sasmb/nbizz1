@@ -22,7 +22,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're revolutionizing how businesses connect with their customers through intelligent automation and innovative technology solutions.
+              We&apos;re revolutionizing how businesses connect with their customers through intelligent automation and innovative technology solutions.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
                 At NBizz, we believe every business deserves access to enterprise-level automation tools. Our mission is to democratize business technology, making powerful sales and marketing automation accessible to businesses of all sizes.
               </p>
               <p className="text-lg text-muted-foreground">
-                We're building the future where technology amplifies human potential, not replaces it. Our solutions are designed to free up your time so you can focus on what matters most - growing your business and serving your customers.
+                We&apos;re building the future where technology amplifies human potential, not replaces it. Our solutions are designed to free up your time so you can focus on what matters most - growing your business and serving your customers.
               </p>
             </div>
             <div className="relative">
