@@ -472,7 +472,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         <Container className="max-w-7xl mx-auto">
           <Card className="max-w-4xl mx-auto p-8 md:p-12 bg-white">
             <div className="text-center">
-              <div className="text-6xl text-primary mb-6">"</div>
+              <div className="text-6xl text-primary mb-6">&ldquo;</div>
               <blockquote className="text-xl md:text-2xl font-medium mb-8 text-center">
                 {study.testimonial.quote}
               </blockquote>
@@ -502,7 +502,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               Ready to Transform Your Business?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Let's discuss how we can help you achieve similar results for your business.
+              Let&apos;s discuss how we can help you achieve similar results for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
