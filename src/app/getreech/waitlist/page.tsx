@@ -3,19 +3,33 @@
 import { useState } from "react";
 import { GridBackground } from "@/components/ui/grid-background";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Icons } from "@/components/ui/icons";
 
 export default function WaitlistPage() {
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [website, setWebsite] = useState("");
+  const [issue, setIssue] = useState("");
+  const [willingness, setWillingness] = useState<string | number>("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (fullName && email && phone && issue && willingness !== "") {
       // Here you would typically send the email to your backend
-      console.log("Email submitted:", email);
+      console.log("Waitlist submission:", {
+        fullName,
+        email,
+        phone,
+        website,
+        issue,
+        willingness,
+      });
       setIsSubmitted(true);
     }
   };
@@ -36,22 +50,95 @@ export default function WaitlistPage() {
           </div>
 
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="flex gap-2 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-12 bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
-                required
-              />
-              <Button
-                type="submit"
-                className="h-12 px-6 bg-black hover:bg-black/90 text-white"
-                variant="ghost"
-              >
-                Get Notified
-              </Button>
+            <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto w-full">
+              <div className="grid gap-2">
+                <Label htmlFor="fullName" className="text-gray-200">Full Name</Label>
+                <Input
+                  id="fullName"
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="h-12 bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="email" className="text-gray-200">Email Address</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-12 bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="phone" className="text-gray-200">Phone Number</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="h-12 bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="website" className="text-gray-200">Website</Label>
+                <Input
+                  id="website"
+                  type="url"
+                  placeholder="Enter your website (optional)"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  className="h-12 bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="issue" className="text-gray-200">Biggest Issue as a Brand</Label>
+                <Textarea
+                  id="issue"
+                  placeholder="Describe the biggest challenge your brand is facing"
+                  value={issue}
+                  onChange={(e) => setIssue(e.target.value)}
+                  className="min-h-[120px] bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="willingness" className="text-gray-200">Willingness to Pay (Monthly)</Label>
+                <Input
+                  id="willingness"
+                  type="number"
+                  inputMode="decimal"
+                  min={0}
+                  step="0.01"
+                  placeholder="Enter the amount you’d be willing to pay"
+                  value={willingness}
+                  onChange={(e) => setWillingness(e.target.value)}
+                  className="h-12 bg-gray-950/50 border-gray-800 text-white placeholder:text-gray-400"
+                  required
+                />
+              </div>
+
+              <div className="flex justify-end">
+                <Button
+                  type="submit"
+                  className="h-12 px-6 bg-black hover:bg-black/90 text-white"
+                  variant="ghost"
+                >
+                  Get Notified
+                </Button>
+              </div>
             </form>
           ) : (
             <div className="text-center space-y-4">

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
+import { ChatInputDemo } from '@/components/ui/chat-input-demo'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -105,42 +106,9 @@ export function HeroSection() {
                                     </p>
                                 </AnimatedGroup>
 
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        ...transitionVariants,
-                                    }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[14px] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="#get-started">
-                                                <span className="text-nowrap">Start Building Your Store</span>
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
-                                        <Link href="https://mercyluxuryhair.com" target="_blank">
-                                            <span className="text-nowrap">View Case Study</span>
-                                        </Link>
-                                    </Button>
-                                </AnimatedGroup>
+                                <div className="mt-12 flex justify-center">
+                                    <ChatInputDemo />
+                                </div>
                             </div>
                         </div>
 
