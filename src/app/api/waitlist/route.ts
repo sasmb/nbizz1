@@ -16,6 +16,8 @@ function getClientIp(request: NextRequest): string {
 }
 
 function isRateLimited(request: NextRequest): boolean {
+  // Disable rate limiting in non-production environments for easier testing
+  if (process.env.NODE_ENV !== 'production') return false
   const ip = getClientIp(request)
   const now = Date.now()
   const existing = rateMap.get(ip)
@@ -99,6 +101,8 @@ export async function POST(request: NextRequest) {
     const clean = validatePayload(body)
 
     const webhookUrl = process.env.N8N_WEBHOOK_URL
+    // TEMP LOGGING
+    console.log('[waitlist] Using N8N_WEBHOOK_URL:', webhookUrl)
     const apiKey = process.env.N8N_API_KEY
 
     if (webhookUrl) {
@@ -108,7 +112,7 @@ export async function POST(request: NextRequest) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(apiKey ? { 'x-api-key': apiKey } : {}),
+          ...(apiKey ? { 'getreechwaitlist': apiKey } : {}),
         },
         body: JSON.stringify(clean),
         signal: controller.signal,
