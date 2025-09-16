@@ -18,19 +18,30 @@ export default function WaitlistPage() {
   const [willingness, setWillingness] = useState<string | number>("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (fullName && email && phone && issue && willingness !== "") {
-      // Here you would typically send the email to your backend
-      console.log("Waitlist submission:", {
-        fullName,
-        email,
-        phone,
-        website,
-        issue,
-        willingness,
-      });
-      setIsSubmitted(true);
+      try {
+        const res = await fetch("/api/waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullName,
+            email,
+            phone,
+            website,
+            issue,
+            willingness,
+          }),
+        });
+        if (res.ok) {
+          setIsSubmitted(true);
+        } else {
+          console.error("Waitlist submission failed");
+        }
+      } catch (err) {
+        console.error("Waitlist submission error", err);
+      }
     }
   };
 
