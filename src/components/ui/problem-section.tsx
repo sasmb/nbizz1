@@ -10,7 +10,7 @@ export function ProblemSection() {
             Most African brands rely on sending a WhatsApp link or a PDF to manage orders. You know the frustration: endless back-and-forth, unclear orders, and lost customers who get tired of waiting. You think a website is too complicated to fix this...
           </p>
           <p className="mb-6">
-            <span className="font-semibold text-green-400">But your website isn't just a landing page.</span> It is your 24/7 online catalogue that customers browse easily. They select their items, choose quantities, and hit 'Order Now' and the complete, calculated order is instantly delivered to your dedicated WhatsApp number.{" "}
+            <span className="font-semibold text-green-400">But your website is not just a landing page.</span> It is your 24/7 online catalogue that customers browse easily. They select their items, choose quantities, and hit Order Now and the complete, calculated order is instantly delivered to your dedicated WhatsApp number.{" "}
             <span className="font-semibold text-green-400">The website does the selling; WhatsApp does the closing.</span>
           </p>
         </div>
@@ -19,10 +19,10 @@ export function ProblemSection() {
         <div className="space-y-6 border-l-4 border-red-500 pl-6">
           <div className="text-xl leading-relaxed md:text-2xl md:leading-relaxed">
             <p className="mb-4 text-red-400">
-              • "Are you tired of customers dropping off when you send them a slow, manually-typed menu list on WhatsApp?"
+              • Are you tired of customers dropping off when you send them a slow, manually-typed menu list on WhatsApp?
             </p>
             <p className="mb-4 text-red-400">
-              • "Every minute you spend detailing product options or calculating totals is a sale you could be losing."
+              • Every minute you spend detailing product options or calculating totals is a sale you could be losing.
             </p>
             <p className="text-red-400">
               • That one crucial item is always out of stock, but you spent 10 minutes messaging back and forth before you found out.
