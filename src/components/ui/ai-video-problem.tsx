@@ -19,10 +19,10 @@ export function AiVideoProblem() {
         <div className="space-y-6 border-l-4 border-red-500 pl-6">
           <div className="text-xl leading-relaxed md:text-2xl md:leading-relaxed">
             <p className="mb-4 text-red-400">
-              • "Are you losing customers to competitors because you don't have engaging video content?"
+              • &ldquo;Are you losing customers to competitors because you don&apos;t have engaging video content?&rdquo;
             </p>
             <p className="mb-4 text-red-400">
-              • "Every day without video content is a missed opportunity to build trust and convert sales."
+              • &ldquo;Every day without video content is a missed opportunity to build trust and convert sales.&rdquo;
             </p>
             <p className="text-red-400">
               • You want to post videos consistently but hiring videographers or learning video editing takes too much time and money.
