@@ -20,6 +20,9 @@ importers:
       '@number-flow/react':
         specifier: ^0.5.10
         version: 0.5.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@paper-design/shaders-react':
+        specifier: ^0.0.65
+        version: 0.0.65(@types/react@19.0.12)(react@18.3.1)
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.3(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -993,6 +996,18 @@ packages:
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
+
+  '@paper-design/shaders-react@0.0.65':
+    resolution: {integrity: sha512-938W1mHANC2uArAglhG2a60qzajlWnqKPsw5E9HUnu1vJ2d5Kne0771fR8dRL1wS0VwwFyPbOdr7mmSrdmwe8g==, tarball: https://registry.npmjs.org/@paper-design/shaders-react/-/shaders-react-0.0.65.tgz}
+    peerDependencies:
+      '@types/react': ^18 || ^19
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@paper-design/shaders@0.0.65':
+    resolution: {integrity: sha512-BjOfV82yFn1jxoc6HlirHnTaafXIb7SVItGP1lK9hxmqA2f0bt6otoH/lCp9N9aLTxBivB6AwMfeZYvwOsAjTw==, tarball: https://registry.npmjs.org/@paper-design/shaders/-/shaders-0.0.65.tgz}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==, tarball: https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz}
@@ -5486,6 +5501,15 @@ snapshots:
       number-flow: 0.5.8
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  '@paper-design/shaders-react@0.0.65(@types/react@19.0.12)(react@18.3.1)':
+    dependencies:
+      '@paper-design/shaders': 0.0.65
+      react: 18.3.1
+    optionalDependencies:
+      '@types/react': 19.0.12
+
+  '@paper-design/shaders@0.0.65': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true

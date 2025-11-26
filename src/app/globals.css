@@ -70,6 +70,10 @@ body {
     --ring: 221.2 83.2% 53.3%;
     
     --radius: 0.5rem;
+    
+    /* Additional colors for AnomalousMatterHero */
+    --sky-300: 203, 92%, 53%;
+    --gray-300: 0, 0%, 70%;
   }
 
   .dark {
@@ -106,6 +110,10 @@ body {
     --ring: 217.2 91.2% 59.8%;
     
     --radius: 0.5rem;
+    
+    /* Additional colors for AnomalousMatterHero */
+    --sky-300: 203, 92%, 53%;
+    --gray-300: 0, 0%, 70%;
   }
 }
 
@@ -209,4 +217,19 @@ body {
   100% {
     offset-distance: 100%;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-long {
+  animation: fadeIn 1s ease-out;
 }
