@@ -14,7 +14,7 @@ import { Arrow } from "./arrow";
 const Scene = dynamic(() => import("./scene"), { ssr: false });
 
 const BELIEF =
-  "Every venture starts as one sharp idea. Nexusbizz exists to turn those ideas into companies with real infrastructure, real customers and room to scale. We build the companies, then we build the tools they run on.";
+  "Every business will soon run on AI agents. Nexusbizz builds them: agents and custom AI that sell, support and operate inside the tools a company already uses. We prove it in our own ventures first, then build it for yours.";
 
 export function Stage() {
   const root = useRef<HTMLDivElement>(null);
@@ -141,7 +141,7 @@ export function Stage() {
           <div ref={heroContent} className="nx-gutter nx-grid relative h-full will-change-transform">
             <div className="col-span-4 pt-[34vh] md:col-span-2 md:col-start-3 md:pt-[30vh]">
               <p className="nx-mono mb-5 text-[var(--signal)]">
-                {live ? <Scramble text="[ A US holding company ]" trigger="mount" duration={700} /> : <span className="opacity-0">[ A US holding company ]</span>}
+                {live ? <Scramble text="[ AI agents · Ventures · Studio ]" trigger="mount" duration={700} /> : <span className="opacity-0">[ AI agents · Ventures · Studio ]</span>}
               </p>
               <h1 id="nx-hero-title" className="text-[34px] font-normal leading-[1.08] tracking-[-0.02em] md:text-[clamp(30px,2.6vw,44px)]">
                 {["Building the companies", "behind what’s next."].map((line, i) => (
@@ -158,15 +158,22 @@ export function Stage() {
                   </span>
                 ))}
               </h1>
+              <p
+                className="mt-6 max-w-[44ch] text-[15px] leading-[1.6] text-white/70"
+                style={{ opacity: live ? 1 : 0, transition: "opacity 1s var(--ease-out) 0.3s" }}
+              >
+                Nexusbizz is a US company that builds AI agents and custom AI for businesses, and the parent of Nepo Commerce,
+                Fayaa Tech and Sohae Finance.
+              </p>
               <div
-                className="mt-10 max-w-[360px]"
+                className="mt-8 max-w-[360px]"
                 style={{
                   clipPath: live ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
                   transition: "clip-path 1s var(--ease-out) 0.35s",
                 }}
               >
-                <Link href="#ventures" className="nx-cta nx-mono !text-[13px]">
-                  <Scramble text="Explore the ventures" />
+                <Link href="#agents" className="nx-cta nx-mono !text-[13px]">
+                  <Scramble text="See what we build" />
                   <Arrow />
                 </Link>
               </div>
@@ -222,9 +229,9 @@ export function Stage() {
                 {manifestoOn ? <Scramble text="One company. Many ventures." trigger="mount" duration={900} /> : "One company. Many ventures."}
               </h2>
               <p className="text-[17px] leading-[1.6] text-white/90 md:text-[20px]">
-                Nexusbizz LLC is the US parent of Nepo Commerce, Fayaa Tech and Sohae Finance, plus a studio that builds for
-                other brands. Each venture runs on its own. All of them share one standard: build it properly, ship it fast,
-                keep it honest.
+                Nexusbizz LLC builds AI agents, AI development and implementation for businesses, and is the US parent of
+                Nepo Commerce, Fayaa Tech and Sohae Finance. Each venture runs on its own. All of them share one standard:
+                build it properly, ship it fast, keep it honest.
               </p>
             </div>
           </div>

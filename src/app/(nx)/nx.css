@@ -88,6 +88,7 @@ html.lenis, html.lenis body { height: auto; }
   align-items: center;
   gap: 12px;
   height: 38px;
+  white-space: nowrap;
   padding: 0 16px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -180,3 +181,32 @@ html.lenis, html.lenis body { height: auto; }
 
 .nx { --wm-bottom: clamp(14px, 2.2vw, 36px); --foot-h: min(100svh, max(560px, 66vh)); }
 @keyframes nx-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes nx-line { from { opacity: 0; transform: translateY(6px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* brief form */
+.nx-opt {
+  display: flex; align-items: stretch; height: 52px; text-align: left;
+  background: rgba(255,255,255,0.045); color: var(--paper); font-size: 15px;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+.nx-opt > span:last-child { display: flex; align-items: center; }
+.nx-opt-key {
+  display: flex; align-items: center; justify-content: center; width: 52px; flex: none;
+  font-family: var(--font-mono); font-size: 12px; background: rgba(255,255,255,0.05);
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+.nx-opt:hover { background: rgba(255,255,255,0.09); }
+.nx-opt.is-on { background: var(--paper); color: var(--ink); }
+.nx-opt.is-on .nx-opt-key { background: var(--signal); color: #fff; }
+.nx-opt:focus-visible { outline: 1px solid var(--signal); outline-offset: 2px; }
+.nx-input {
+  width: 100%; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08);
+  color: var(--paper); padding: 14px 16px; font-size: 15px; outline: none;
+  transition: border-color 0.25s var(--ease-out), background-color 0.25s var(--ease-out);
+}
+.nx-input::placeholder { color: rgba(255,255,255,0.28); }
+.nx-input:focus { border-color: var(--signal); background: rgba(255,255,255,0.07); }
+.nx-input[aria-invalid="true"] { border-color: var(--signal-deep); }
+.nx-input:-webkit-autofill { -webkit-text-fill-color: var(--paper); -webkit-box-shadow: 0 0 0 100px #1a1412 inset; }
+@keyframes nx-step-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes nx-step-back { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }

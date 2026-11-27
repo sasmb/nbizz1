@@ -9,6 +9,7 @@ import { VENTURES } from "./data";
 
 const LINKS = [
   { href: "/", label: "Home" },
+  { href: "/ai-agents", label: "AI Agents" },
   { href: "/#ventures", label: "Ventures" },
   { href: "/studio", label: "Studio" },
   { href: "/contact", label: "Contact" },
@@ -20,7 +21,7 @@ export function Nav() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > window.innerHeight * 0.85);
+    const onScroll = () => setSolid(window.scrollY > (window.location.pathname === "/" ? window.innerHeight * 0.85 : 40));
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -68,7 +69,7 @@ export function Nav() {
             className="nx-mono hidden text-white/85 transition-opacity duration-500 md:block"
             style={{ opacity: solid ? 0 : 1 }}
           >
-            Commerce · AI · Energy
+            AI agents · Commerce · Energy
             <br />[ Ventures + Studio ]
           </p>
 
@@ -80,6 +81,7 @@ export function Nav() {
                   href={l.href}
                   className="nx-box nx-mono !text-[12px]"
                   aria-current={pathname === l.href ? "page" : undefined}
+                  data-brief={l.href === "/contact" ? "" : undefined}
                 >
                   <Scramble text={l.label} />
                 </Link>

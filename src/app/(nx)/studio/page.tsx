@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { Metadata } from "next";
 import { STUDIO } from "@/components/nx/data";
 import { PageHero } from "@/components/nx/page-hero";
 import { Media } from "@/components/nx/media";
@@ -8,10 +7,14 @@ import { Arrow } from "@/components/nx/arrow";
 import { Scramble } from "@/components/nx/scramble";
 import { ReachOut, Footer } from "@/components/nx/closing";
 
-export const metadata: Metadata = {
-  title: "Studio",
-  description: "Nexusbizz Studio builds websites, AI video and automation for brands that want to look and run like category leaders.",
-};
+import { JsonLd, breadcrumbLd, pageMeta } from "@/components/nx/seo";
+
+export const metadata = pageMeta({
+  title: "Studio: AI Agents, AI Development, Websites & AI Video",
+  description:
+    "Nexusbizz Studio builds AI agents, custom AI development and implementation, conversion-focused websites and AI video for brands.",
+  path: "/studio",
+});
 
 const DETAIL: Record<string, { get: string[]; work?: { label: string; href: string; img: string }[] }> = {
   Websites: {
@@ -22,7 +25,8 @@ const DETAIL: Record<string, { get: string[]; work?: { label: string; href: stri
     ],
   },
   "AI Video": { get: ["Concept and shot list", "Product-true AI generation", "Edit, grade and sound", "Cut-downs for every placement"] },
-  Automation: { get: ["WhatsApp ordering and support", "Payment and inventory sync", "AI agents for repetitive work", "Dashboards your team will use"] },
+  "AI Agents": { get: ["Sales, support and ops agents", "WhatsApp, web chat, email and voice", "Payments, inventory and CRM actions", "Monitoring and monthly improvements"] },
+  "AI Development": { get: ["LLM features inside your product", "Retrieval over your documents and data", "Extraction and automation pipelines", "Security, evals and handover"] },
 };
 
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
@@ -30,6 +34,7 @@ const slug = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
 export default function StudioPage() {
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Home", path: "/" }, { name: "Studio", path: "/studio" }])} />
       <main className="relative bg-[var(--ink)]">
         <PageHero
           eyebrow="[ Nexusbizz Studio ]"
@@ -42,7 +47,7 @@ export default function StudioPage() {
             </>
           }
           aside={
-            <Link href="/contact" className="nx-cta nx-mono !text-[13px]">
+            <Link href="/contact" data-brief className="nx-cta nx-mono !text-[13px]">
               <Scramble text="Start a project" />
               <Arrow />
             </Link>

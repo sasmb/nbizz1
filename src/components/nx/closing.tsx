@@ -49,11 +49,11 @@ export function ReachOut() {
             Let&rsquo;s talk.
           </h2>
           <p className="mt-6 max-w-[40ch] text-[15px] leading-[1.6] text-white/70">
-            Partner with a venture, hire the studio, or pitch us something we should build next. We answer every serious
-            message within two business days.
+            Bring us the AI agent, product or site you need built, or a venture you want to partner on. Four quick steps,
+            and we reply within two business days.
           </p>
           <div className="mt-10 space-y-2">
-            <Link href="/contact" className="nx-cta nx-mono !text-[13px]">
+            <Link href="/contact" data-brief className="nx-cta nx-mono !text-[13px]">
               <Scramble text="Fill in the form" />
               <Arrow />
             </Link>
@@ -82,9 +82,10 @@ export function Footer() {
     {
       h: "Studio",
       links: [
+        { href: "/ai-agents", label: "AI agents" },
+        { href: "/studio#ai-development", label: "AI development" },
         { href: "/studio#websites", label: "Websites" },
         { href: "/studio#ai-video", label: "AI video" },
-        { href: "/studio#automation", label: "Automation" },
       ],
     },
     {

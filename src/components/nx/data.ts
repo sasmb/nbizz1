@@ -81,6 +81,22 @@ export type StudioService = {
 export const STUDIO: StudioService[] = [
   {
     index: "01",
+    name: "AI Agents",
+    body:
+      "Agents that answer customers, take orders, chase invoices and update your systems, around the clock. We design them around your process, connect them to your tools and keep them improving after launch.",
+    tags: ["Sales & support agents", "WhatsApp", "Operations"],
+    media: { kind: "video", src: "/nx/whatsapp-ordering.mp4", poster: "/nx/whatsapp-ordering.jpg", alt: "AI agent taking orders over WhatsApp" },
+  },
+  {
+    index: "02",
+    name: "AI Development",
+    body:
+      "Custom AI built into the software you already run: copilots, document and data pipelines, retrieval over your knowledge, and model integrations that are tested, secured and owned by you.",
+    tags: ["LLM integration", "RAG", "Implementation"],
+    media: { kind: "image", src: "/nx/commerce-admin.webp", alt: "Commerce admin with AI assistant" },
+  },
+  {
+    index: "03",
     name: "Websites",
     body:
       "A website is your hardest-working salesperson. We design and build fast, conversion-focused sites and stores that look like the brand and load like an app.",
@@ -88,20 +104,59 @@ export const STUDIO: StudioService[] = [
     media: { kind: "image", src: "/nx/ofam.webp", alt: "Ofam Mills website" },
   },
   {
-    index: "02",
+    index: "04",
     name: "AI Video",
     body:
       "Campaign-grade product films made with AI and finished by people. Built for paid social, launches and the moments a still image can't carry.",
     tags: ["Product films", "Social ads", "Launches"],
     media: { kind: "video", src: "/nx/ai-diamond.mp4", poster: "/nx/ai-diamond.jpg", alt: "AI generated jewellery video" },
   },
+];
+
+/** What Nexusbizz builds under AI agents, development and implementation. */
+export const AGENT_CAPABILITIES = [
+  {
+    index: "01",
+    title: "AI agents",
+    text: "Sales, support and operations agents on WhatsApp, web chat, email and voice. They take orders, book appointments, answer questions and hand off to a person when it matters.",
+  },
+  {
+    index: "02",
+    title: "AI development",
+    text: "Custom models wired into your product: copilots, retrieval over your documents, extraction pipelines and internal tools built on the best model for each job.",
+  },
   {
     index: "03",
-    name: "Automation",
-    body:
-      "Ordering, follow-ups and support that run themselves. We wire WhatsApp, payments and your stack together so the busy work stops landing on your team.",
-    tags: ["WhatsApp", "AI agents", "Workflows"],
-    media: { kind: "video", src: "/nx/whatsapp-ordering.mp4", poster: "/nx/whatsapp-ordering.jpg", alt: "WhatsApp ordering automation demo" },
+    title: "Implementation",
+    text: "We connect AI to the systems you already use, from payments and inventory to CRMs and spreadsheets, with logging, guardrails and access controls in place.",
+  },
+  {
+    index: "04",
+    title: "Training & support",
+    text: "Your team learns to run and trust the system. We monitor, measure and improve the agents after launch, so they keep getting better.",
+  },
+];
+
+export const AGENT_FAQ = [
+  {
+    q: "What is an AI agent?",
+    a: "An AI agent is software that understands a request in plain language, decides what to do, and takes action in your systems: replying to a customer, creating an order, updating a record or escalating to a person.",
+  },
+  {
+    q: "Which businesses do you build AI agents for?",
+    a: "Brands and operators who handle a lot of repeat conversations or admin work: retail and e-commerce, food and hospitality, services and B2B teams in the United States and beyond.",
+  },
+  {
+    q: "How long does an AI agent project take?",
+    a: "A focused first agent usually goes live in two to six weeks, depending on how many systems it needs to connect to. We start small, measure, then expand.",
+  },
+  {
+    q: "Which AI models do you use?",
+    a: "We are model-agnostic. We choose the model that fits the task, cost and privacy needs of each project, and design so you can switch later.",
+  },
+  {
+    q: "Do you only build for Nexusbizz ventures?",
+    a: "No. Nexusbizz Studio builds AI agents, AI integrations, websites and AI video for other companies too.",
   },
 ];
 

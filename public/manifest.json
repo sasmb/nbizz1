@@ -1,11 +1,11 @@
 {
-    "name": "NBizz - Business Automation Platform",
-    "short_name": "NBizz",
-    "description": "AI-powered business automation and growth platform",
+    "name": "Nexusbizz",
+    "short_name": "Nexusbizz",
+    "description": "AI agents, AI development and the ventures behind what's next.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#FFFFFF",
-    "theme_color": "#000000",
+    "background_color": "#070707",
+    "theme_color": "#070707",
     "orientation": "portrait-primary",
     "icons": [
         {
@@ -50,4 +50,4 @@
             "type": "image/png"
         }
     ]
-} 
+}

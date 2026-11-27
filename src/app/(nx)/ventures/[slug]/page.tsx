@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
 import { VENTURES } from "@/components/nx/data";
 import { PageHero } from "@/components/nx/page-hero";
 import { Media } from "@/components/nx/media";
@@ -8,15 +7,16 @@ import { Reveal } from "@/components/nx/reveal";
 import { Arrow } from "@/components/nx/arrow";
 import { FitWord } from "@/components/nx/fit-word";
 import { ReachOut, Footer } from "@/components/nx/closing";
+import { JsonLd, breadcrumbLd, pageMeta, SITE_URL, ORG_ID } from "@/components/nx/seo";
 
 export function generateStaticParams() {
   return VENTURES.map((v) => ({ slug: v.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export function generateMetadata({ params }: { params: { slug: string } }) {
   const v = VENTURES.find((x) => x.slug === params.slug);
   if (!v) return {};
-  return { title: v.name, description: `${v.line} ${v.name} is a Nexusbizz company.` };
+  return pageMeta({ title: v.name, description: `${v.line} ${v.name} is a Nexusbizz company. ${v.body.split(". ")[0]}.`, path: `/ventures/${v.slug}` });
 }
 
 export default function VenturePage({ params }: { params: { slug: string } }) {
@@ -27,6 +27,24 @@ export default function VenturePage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Ventures", path: "/#ventures" },
+            { name: v.name, path: `/ventures/${v.slug}` },
+          ]),
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": `${SITE_URL}/ventures/${v.slug}#organization`,
+            name: v.name,
+            description: `${v.line} ${v.body}`,
+            url: `${SITE_URL}/ventures/${v.slug}`,
+            parentOrganization: { "@id": ORG_ID, name: "Nexusbizz LLC" },
+          },
+        ]}
+      />
       <main className="relative bg-[var(--ink)]">
         <PageHero
           eyebrow={`[ Venture ${v.index} · ${v.sector} ]`}

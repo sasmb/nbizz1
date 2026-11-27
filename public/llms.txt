@@ -1,0 +1,32 @@
+# Nexusbizz
+
+> Nexusbizz LLC is a United States company that builds AI agents, AI development and AI implementation for businesses, and is the parent company of three ventures: Nepo Commerce, Fayaa Tech and Sohae Finance. Its studio also builds websites and AI video for brands.
+
+Key facts:
+- Legal name: Nexusbizz LLC (United States). Works with clients worldwide, remotely.
+- Core service: AI agents for sales, customer support and operations (WhatsApp, web chat, email, voice), connected to payments, inventory and CRMs.
+- Also: custom AI development (LLM features, retrieval over company documents, extraction pipelines) and AI implementation into existing systems.
+- Typical first agent goes live in 2–6 weeks. Model-agnostic.
+- Contact: hello@nexusbizz.com or the brief form at https://www.nexusbizz.com/contact (reply within two business days).
+
+## Services
+
+- [AI agents, AI development & implementation](https://www.nexusbizz.com/ai-agents): what we build, how we deliver, FAQ
+- [Studio](https://www.nexusbizz.com/studio): AI agents, AI development, websites, AI video
+- [Contact / start a project](https://www.nexusbizz.com/contact): four-step project brief
+
+## Ventures
+
+- [Nepo Commerce](https://www.nexusbizz.com/ventures/nepo-commerce): commerce infrastructure for brands that sell everywhere: storefronts, payments and WhatsApp ordering. Home of getreech and NBooking.
+- [Fayaa Tech](https://www.nexusbizz.com/ventures/fayaa-tech): AI video and creative generation for brands.
+- [Sohae Finance](https://www.nexusbizz.com/ventures/sohae-finance): a renewable energy investment platform.
+
+## Work
+
+- [Case study: Mercy Luxury Hair](https://www.nexusbizz.com/case-studies/mercy-luxury-hair)
+- [Case study: Ofam Mills](https://www.nexusbizz.com/case-studies/ofam-mills)
+
+## Optional
+
+- [Instagram](https://www.instagram.com/nexusbizz/)
+- [Sitemap](https://www.nexusbizz.com/sitemap.xml)
