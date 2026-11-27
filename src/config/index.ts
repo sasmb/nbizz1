@@ -2,12 +2,12 @@ import { Metadata } from "next";
 
 export const SITE_CONFIG: Metadata = {
     title: {
-        default: "NBizz - AI-Powered Business Automation & Growth Platform",
-        template: `%s | NBizz`
+        default: "Nexusbizz | AI agents, AI development and the companies behind what's next",
+        template: `%s | Nexusbizz`
     },
-    description: "Transform your business with NBizz's comprehensive suite of AI-powered tools. From website creation to sales automation, content management to marketing campaigns - scale your business efficiently.",
-    applicationName: "NBizz",
-    authors: [{ name: "NBizz Team" }],
+    description: "Nexusbizz LLC builds AI agents, AI development and implementation for businesses, and is the US parent company of Nepo Commerce, Fayaa Tech and Sohae Finance.",
+    applicationName: "Nexusbizz",
+    authors: [{ name: "Nexusbizz LLC" }],
     generator: "Next.js",
     keywords: [
         "AI business automation",
@@ -25,11 +25,13 @@ export const SITE_CONFIG: Metadata = {
         "AI sales assistant",
         "content creation",
         "digital marketing",
-        "NBizz"
+        "Nexusbizz",
+        "AI agents",
+        "AI development"
     ],
     referrer: "origin-when-cross-origin",
-    creator: "NBizz",
-    publisher: "NBizz",
+    creator: "Nexusbizz LLC",
+    publisher: "Nexusbizz LLC",
     formatDetection: {
         email: false,
         address: false,
@@ -45,29 +47,27 @@ export const SITE_CONFIG: Metadata = {
     },
     openGraph: {
         type: "website",
-        siteName: "NBizz",
-        title: "NBizz - AI-Powered Business Automation & Growth Platform",
-        description: "Transform your business with NBizz's comprehensive suite of AI-powered tools. Scale efficiently with automated website creation, sales, content, and marketing solutions.",
+        siteName: "Nexusbizz",
+        title: "Nexusbizz | AI agents, AI development and the companies behind what's next",
+        description: "Nexusbizz builds AI agents and custom AI for businesses, and runs ventures in commerce, AI and renewable energy.",
         images: [
             {
-                url: "/assets/og-image.png",
+                url: "/og.jpg",
                 width: 1200,
                 height: 630,
-                alt: "NBizz - Business Automation Platform",
+                alt: "Nexusbizz",
             }
         ],
         locale: "en_US",
     },
     twitter: {
         card: "summary_large_image",
-        creator: "@nbizz",
-        site: "@nbizz",
-        title: "NBizz - AI-Powered Business Automation",
-        description: "Scale your business with AI-powered automation for websites, sales, content, and marketing. Transform efficiency with NBizz.",
+        title: "Nexusbizz | AI agents and AI development",
+        description: "Nexusbizz builds AI agents and custom AI for businesses, and runs ventures in commerce, AI and renewable energy.",
         images: [
             {
-                url: "/assets/twitter-image.png",
-                alt: "NBizz - Business Automation Platform",
+                url: "/og.jpg",
+                alt: "Nexusbizz",
             }
         ]
     },
