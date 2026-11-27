@@ -2,6 +2,7 @@ import { Footer, Navbar } from "@/components";
 import { SITE_CONFIG } from "@/config";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import { LegacyFooterGate } from "@/components/nx/legacy-footer-gate";
 import { dark } from '@clerk/themes';
 import { Inter } from "next/font/google"; 
 import { Metadata, Viewport } from "next";
@@ -20,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://nbizz.com"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://www.nexusbizz.com"),
     ...SITE_CONFIG,
     icons: {
         icon: [
@@ -65,12 +66,14 @@ export default function RootLayout({
             </head>
             <body
                 className={cn(
-                    "min-h-screen bg-background text-foreground antialiased max-w-[100vw] overflow-x-hidden",
+                    "min-h-screen bg-background text-foreground antialiased max-w-[100vw] overflow-x-clip",
                     font.className
                 )}
             >
                     {children}
-                    <Footer />
+                    <LegacyFooterGate>
+                        <Footer />
+                    </LegacyFooterGate>
             </body>
         </html>
     );
