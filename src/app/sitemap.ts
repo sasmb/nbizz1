@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { VENTURES } from "@/components/nx/data";
 import { SITE_URL } from "@/components/nx/seo";
+import { POSTS } from "@/components/nx/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/case-studies/ofam-mills", 0.5],
     ["/about", 0.5],
     ["/blog", 0.5],
+    ...POSTS.map((p) => [`/blog/${p.slug}`, 0.5] as [string, number]),
   ];
   return core.map(([path, priority]) => ({ url: `${SITE_URL}${path}`, lastModified: now, changeFrequency: "monthly", priority }));
 }

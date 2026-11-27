@@ -1,14 +1,7 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Calendar, Clock, ArrowLeft, User, Share2, ChevronUp, Facebook, Twitter, Linkedin } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import Container from '@/components/global/container'
-
-interface BlogPost {
+/* Blog posts, carried over from the original site and renamed (getreech is now Nepo Commerce). */
+export interface BlogPost {
   id: string
+  slug: string
   title: string
   excerpt: string
   content: string
@@ -21,12 +14,13 @@ interface BlogPost {
   image: string
 }
 
-const blogPosts: BlogPost[] = [
+export const POSTS: BlogPost[] = [
   {
     id: '1',
+    slug: 'ai-agents-future-of-ecommerce-africa',
     title: 'AI Agents: The Future of E-commerce in Africa',
     excerpt: 'Discover how AI agents are revolutionizing African e-commerce by bridging the gap between WhatsApp commerce and sophisticated online shopping experiences.',
-    content: `# AI Agents: The Future of E-commerce in Africa
+    content: `#TITLE AI Agents: The Future of E-commerce in Africa
 
 ## The African E-commerce Landscape: From WhatsApp to AI
 
@@ -166,7 +160,7 @@ The integration of AI agents in African e-commerce represents more than technolo
 By embracing AI agents, African businesses can scale beyond WhatsApp limitations while preserving the conversational, relationship-driven approach that customers love.
 
 The future is now, and it's powered by AI.`,
-    author: 'NBizz Team',
+    author: 'Nexusbizz Team',
     publishedAt: '2025-01-10',
     readTime: '8 min read',
     category: 'AI & Technology',
@@ -176,9 +170,10 @@ The future is now, and it's powered by AI.`,
   },
   {
     id: '2',
+    slug: 'ai-agents-admin-experience',
     title: 'How AI Agents Transform the Admin Experience',
     excerpt: 'Learn how AI agents are revolutionizing e-commerce administration by automating product management, inventory tracking, and content creation.',
-    content: `# How AI Agents Transform the Admin Experience
+    content: `#TITLE How AI Agents Transform the Admin Experience
 
 ## The Traditional Admin Struggle
 
@@ -316,7 +311,7 @@ AI agents represent just the beginning of e-commerce automation. As these system
 The transformation from manual to AI-assisted e-commerce administration isn't just about efficiency – it's about unleashing human potential. By freeing administrators from repetitive tasks, AI agents enable focus on innovation, customer relationships, and strategic growth.
 
 The result is a more efficient, scalable, and enjoyable e-commerce experience for everyone involved.`,
-    author: 'NBizz Team',
+    author: 'Nexusbizz Team',
     publishedAt: '2025-01-08',
     readTime: '7 min read',
     category: 'Business Automation',
@@ -326,9 +321,10 @@ The result is a more efficient, scalable, and enjoyable e-commerce experience fo
   },
   {
     id: '3',
+    slug: 'beyond-whatsapp-african-ecommerce-brands',
     title: 'Beyond WhatsApp: Building Sustainable African E-commerce Brands',
     excerpt: 'Explore why African businesses need to move beyond social media reliance and build branded websites to create lasting customer relationships.',
-    content: `# Beyond WhatsApp: Building Sustainable African E-commerce Brands
+    content: `#TITLE Beyond WhatsApp: Building Sustainable African E-commerce Brands
 
 ## The Current African E-commerce Landscape
 
@@ -509,7 +505,7 @@ Building a sustainable brand through a professional website isn't just about cre
 The transition from social media dependency to branded e-commerce isn't just a business strategy – it's an investment in the future of African commerce. The businesses that make this transition now will be the market leaders of tomorrow.
 
 Remember: E-commerce is ultimately about selling, and the most effective selling happens when customers trust your brand, enjoy their shopping experience, and feel confident in their purchase decisions. A professional, branded website is the foundation for achieving all of these goals.`,
-    author: 'NBizz Team',
+    author: 'Nexusbizz Team',
     publishedAt: '2025-01-05',
     readTime: '10 min read',
     category: 'African E-commerce',
@@ -519,9 +515,10 @@ Remember: E-commerce is ultimately about selling, and the most effective selling
   },
   {
     id: '4',
-    title: 'getreech vs Traditional Platforms: The AI-First Difference',
-    excerpt: 'Discover how getreech revolutionizes e-commerce with AI-assisted store creation and management, unlike traditional platforms that leave you to figure it out alone.',
-    content: `# getreech vs Traditional Platforms: The AI-First Difference
+    slug: 'nepo-commerce-vs-traditional-platforms',
+    title: 'Nepo Commerce vs Traditional Platforms: The AI-First Difference',
+    excerpt: 'Discover how Nepo Commerce revolutionizes e-commerce with AI-assisted store creation and management, unlike traditional platforms that leave you to figure it out alone.',
+    content: `#TITLE Nepo Commerce vs Traditional Platforms: The AI-First Difference
 
 ## The Traditional E-commerce Platform Problem
 
@@ -545,13 +542,13 @@ Traditional platforms essentially say: "Here are the tools, now figure it out yo
 - Get overwhelmed and abandon their e-commerce dreams
 - Struggle with ongoing maintenance and optimization
 
-## Enter getreech: The AI-First Revolution
+## Enter Nepo Commerce: The AI-First Revolution
 
-getreech represents a fundamental shift in how e-commerce platforms should work. Instead of handing you tools and walking away, getreech provides an AI agent that assists you throughout the entire journey – from initial store creation to ongoing management and optimization.
+Nepo Commerce represents a fundamental shift in how e-commerce platforms should work. Instead of handing you tools and walking away, Nepo Commerce provides an AI agent that assists you throughout the entire journey – from initial store creation to ongoing management and optimization.
 
 ### The AI Assistant Difference
 
-**getreech's Approach**: "Let our AI agent guide you through every step while you focus on growing your business."
+**Nepo Commerce's Approach**: "Let our AI agent guide you through every step while you focus on growing your business."
 
 ## Comprehensive Feature Comparison
 
@@ -564,7 +561,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Spend days or weeks on initial setup
 - Often need to hire developers for custom features
 
-**getreech:**
+**Nepo Commerce:**
 - AI agent asks about your business and preferences
 - Automatically generates optimized store designs
 - Creates responsive, mobile-first layouts
@@ -580,7 +577,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Create categories and organize inventory manually
 - No guidance on pricing or presentation
 
-**getreech:**
+**Nepo Commerce:**
 - AI-assisted product import and organization
 - Automatically generated, SEO-optimized descriptions
 - Image optimization and enhancement
@@ -596,7 +593,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Reactive rather than proactive management
 - Risk of overselling or stockouts
 
-**getreech:**
+**Nepo Commerce:**
 - AI-powered inventory forecasting
 - Automated reorder point calculations
 - Predictive demand analysis
@@ -612,7 +609,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Often need CSS/HTML knowledge for advanced changes
 - Risk of broken layouts on different devices
 
-**getreech:**
+**Nepo Commerce:**
 - AI agent provides design recommendations
 - Real-time visual editing with AI guidance
 - Automatic mobile optimization
@@ -628,7 +625,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Self-service approach to problem-solving
 - Generic advice not tailored to your business
 
-**getreech:**
+**Nepo Commerce:**
 - 24/7 AI agent assistance
 - Personalized guidance based on your business
 - Proactive suggestions for improvement
@@ -646,7 +643,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Limited offline capabilities
 - Not optimized for African internet infrastructure
 
-**getreech:**
+**Nepo Commerce:**
 - Built specifically for mobile-first markets
 - Optimized for limited data environments
 - Progressive web app capabilities
@@ -662,7 +659,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Lack of local payment integration
 - No consideration for local languages or customs
 
-**getreech:**
+**Nepo Commerce:**
 - Designed with African businesses in mind
 - Understands local commerce patterns
 - Integrated support for mobile money and local payments
@@ -679,7 +676,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Months to achieve professional results
 - Ongoing maintenance requirements
 
-**getreech:**
+**Nepo Commerce:**
 - 24-48 hours for complete store setup
 - AI handles most customization automatically
 - Professional results from day one
@@ -693,7 +690,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Often requires expensive optimization services
 - Performance varies widely based on implementation
 
-**getreech:**
+**Nepo Commerce:**
 - Average conversion rate: 3-7%
 - AI optimization ensures best practices
 - Built-in conversion optimization features
@@ -708,7 +705,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - Developer costs: $2,000-$10,000
 - Ongoing maintenance: $500-$2,000/month
 
-**getreech:**
+**Nepo Commerce:**
 - All-inclusive pricing with AI assistance
 - No additional theme or app costs
 - No developer fees required
@@ -719,7 +716,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 
 ### Intelligent Automation
 
-**getreech's AI Agent Can:**
+**Nepo Commerce's AI Agent Can:**
 - Monitor store performance and suggest improvements
 - Automatically optimize product listings for search engines
 - Adjust pricing based on market conditions and competition
@@ -729,7 +726,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 
 ### Voice-Activated Management
 
-**Unique to getreech:**
+**Unique to Nepo Commerce:**
 - "Add 50 units of Product X to inventory"
 - "Create a 20% discount for first-time customers"
 - "Show me this week's best-selling products"
@@ -744,7 +741,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 - No predictive capabilities
 - Manual interpretation required
 
-**getreech:**
+**Nepo Commerce:**
 - AI-powered sales forecasting
 - Customer behavior prediction
 - Automated trend identification
@@ -755,7 +752,7 @@ getreech represents a fundamental shift in how e-commerce platforms should work.
 
 ### Not Replacement, But Enhancement
 
-getreech doesn't replace human decision-making – it enhances it:
+Nepo Commerce doesn't replace human decision-making – it enhances it:
 
 - **AI Handles**: Repetitive tasks, data analysis, optimization
 - **Humans Focus On**: Strategy, customer relationships, business growth
@@ -770,7 +767,7 @@ getreech doesn't replace human decision-making – it enhances it:
 - Limited customization without technical skills
 - Brand dilution through poor implementation
 
-**getreech:**
+**Nepo Commerce:**
 - AI learns and maintains your brand guidelines
 - Ensures consistent brand application across all elements
 - Personalized design recommendations that fit your brand
@@ -786,7 +783,7 @@ getreech doesn't replace human decision-making – it enhances it:
 - Often need third-party solutions for innovation
 - Risk of becoming outdated
 
-**getreech:**
+**Nepo Commerce:**
 - Built-in AI ensures automatic adoption of best practices
 - Seamless integration of new AI capabilities
 - Continuous learning and improvement
@@ -800,17 +797,17 @@ getreech doesn't replace human decision-making – it enhances it:
 - Complex scaling decisions
 - Risk of technical debt
 
-**getreech:**
+**Nepo Commerce:**
 - AI-managed scaling and optimization
 - Automatic performance improvements
 - Intelligent resource allocation
 - Clean, maintainable codebase
 
-## The getreech Advantage for African Businesses
+## The Nepo Commerce Advantage for African Businesses
 
 ### Designed for Local Success
 
-getreech isn't just another e-commerce platform adapted for Africa – it's built specifically for African businesses and consumers:
+Nepo Commerce isn't just another e-commerce platform adapted for Africa – it's built specifically for African businesses and consumers:
 
 1. **Mobile-Optimized**: Recognizing that most African users access the internet via smartphones
 2. **Data-Conscious**: Optimized for users with limited data plans
@@ -827,7 +824,7 @@ getreech isn't just another e-commerce platform adapted for Africa – it's buil
 - Limited local payment options
 - Poor mobile optimization
 
-**getreech Solutions:**
+**Nepo Commerce Solutions:**
 - AI eliminates technical complexity
 - All-inclusive pricing with no hidden costs
 - African-first design philosophy
@@ -836,9 +833,9 @@ getreech isn't just another e-commerce platform adapted for Africa – it's buil
 
 ## Conclusion: The New Standard for E-commerce
 
-The comparison between getreech and traditional e-commerce platforms isn't just about features – it's about philosophy. Traditional platforms assume you want to become a web developer, designer, and digital marketing expert. getreech assumes you want to focus on your business while AI handles the technical complexity.
+The comparison between Nepo Commerce and traditional e-commerce platforms isn't just about features – it's about philosophy. Traditional platforms assume you want to become a web developer, designer, and digital marketing expert. Nepo Commerce assumes you want to focus on your business while AI handles the technical complexity.
 
-### Why Choose getreech?
+### Why Choose Nepo Commerce?
 
 - **Speed**: Launch professional stores in days, not months
 - **Intelligence**: AI assistance throughout your entire journey
@@ -850,350 +847,20 @@ The comparison between getreech and traditional e-commerce platforms isn't just 
 
 ### The Bottom Line
 
-While traditional platforms offer tools, getreech offers partnership. The AI agent doesn't just help you build a store – it helps you build a successful business.
+While traditional platforms offer tools, Nepo Commerce offers partnership. The AI agent doesn't just help you build a store – it helps you build a successful business.
 
-For African entrepreneurs ready to compete in the global digital marketplace, getreech represents more than just a platform choice – it's a competitive advantage that levels the playing field and opens up new possibilities for growth and success.
+For African entrepreneurs ready to compete in the global digital marketplace, Nepo Commerce represents more than just a platform choice – it's a competitive advantage that levels the playing field and opens up new possibilities for growth and success.
 
-The future of e-commerce isn't about learning to use complex tools – it's about collaborating with intelligent systems that understand your business and help you achieve your goals. With getreech, that future is available today.`,
-    author: 'NBizz Team',
+The future of e-commerce isn't about learning to use complex tools – it's about collaborating with intelligent systems that understand your business and help you achieve your goals. With Nepo Commerce, that future is available today.`,
+    author: 'Nexusbizz Team',
     publishedAt: '2025-01-03',
     readTime: '12 min read',
     category: 'Platform Comparison',
-    tags: ['getreech', 'AI Agents', 'E-commerce Platforms', 'Shopify Alternative'],
+    tags: ['Nepo Commerce', 'AI Agents', 'E-commerce Platforms', 'Shopify Alternative'],
     featured: true,
     image: '/assets/preview.png'
   }
 ]
 
-interface PageProps {
-  params: Promise<{ id: string }>
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { id } = await params
-  const post = blogPosts.find(p => p.id === id)
-  
-  if (!post) {
-    return {
-      title: 'Blog Post Not Found - NBizz',
-      description: 'The requested blog post could not be found.'
-    }
-  }
-
-  return {
-    title: `${post.title} - NBizz Blog`,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: 'article',
-      publishedTime: post.publishedAt,
-      authors: [post.author],
-      images: [post.image],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: [post.image],
-    }
-  }
-}
-
-export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    id: post.id,
-  }))
-}
-
-// Generate table of contents from the blog content
-const generateTableOfContents = (content: string) => {
-  const lines = content.split('\n')
-  const tocItems: { id: string; title: string; level: number }[] = []
-  
-  lines.forEach((line, index) => {
-    if (line.startsWith('## ')) {
-      const title = line.slice(3).trim()
-      const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-      tocItems.push({ id, title, level: 2 })
-    } else if (line.startsWith('### ')) {
-      const title = line.slice(4).trim()
-      const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-      tocItems.push({ id, title, level: 3 })
-    }
-  })
-  
-  return tocItems
-}
-
-export default async function BlogPostPage({ params }: PageProps) {
-  const { id } = await params
-  const post = blogPosts.find(p => p.id === id)
-
-  if (!post) {
-    notFound()
-  }
-
-  const relatedPosts = blogPosts
-    .filter(p => p.id !== post.id && p.tags.some(tag => post.tags.includes(tag)))
-    .slice(0, 3)
-
-  const tableOfContents = generateTableOfContents(post.content)
-
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Back Navigation */}
-      <section className="py-8 border-b border-gray-200 bg-white">
-        <Container>
-          <div className="max-w-6xl mx-auto px-6 lg:px-8">
-            <Link href="/blog">
-              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-gray-900 hover:bg-gray-100">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Blog
-              </Button>
-            </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* Main Content Layout */}
-      <section className="py-12 bg-white">
-        <Container>
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="flex gap-12">
-              {/* Left Sidebar */}
-            <div className="hidden lg:block w-80 flex-shrink-0">
-              <div className="sticky top-32 space-y-6">
-                {/* Article Info */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <h3 className="font-semibold mb-4 text-gray-900">Article Info</h3>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-center gap-2">
-                      <User className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-700">{post.author}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-700">{new Date(post.publishedAt).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-700">{post.readTime}</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-1 mt-4 flex-wrap">
-                    {post.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs border-gray-200 text-gray-600">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Table of Contents */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-gray-900">Table of Contents</h3>
-                    <ChevronUp className="h-4 w-4 text-gray-500" />
-                  </div>
-                  <nav className="space-y-2">
-                    {tableOfContents.map((item, index) => (
-                      <a
-                        key={index}
-                        href={`#${item.id}`}
-                        className={`block text-sm hover:text-blue-600 transition-colors ${
-                          item.level === 3 ? 'ml-4 text-gray-500' : 'font-medium text-gray-700'
-                        }`}
-                      >
-                        {item.level === 2 && `${index + 1}. `}{item.title}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-
-                {/* Share Section */}
-                <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-                  <h3 className="font-semibold mb-4 text-gray-900">Share Article</h3>
-                  <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="flex-1 border-gray-200 text-gray-600 hover:bg-gray-100">
-                      <Facebook className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1 border-gray-200 text-gray-600 hover:bg-gray-100">
-                      <Twitter className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1 border-gray-200 text-gray-600 hover:bg-gray-100">
-                      <Linkedin className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="flex-1 min-w-0">
-              {/* Article Header */}
-              <div className="mb-12">
-                <Badge variant="secondary" className="mb-4 bg-gray-100 text-gray-800">
-                  {post.category}
-                </Badge>
-                <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
-                  {post.title}
-                </h1>
-                
-                {/* Mobile Article Info */}
-                <div className="lg:hidden flex items-center gap-4 text-sm text-gray-500 mb-6">
-                  <div className="flex items-center gap-1">
-                    <User className="h-3 w-3" />
-                    {post.author}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric'
-                    })}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    {post.readTime}
-                  </div>
-                </div>
-
-                <div className="relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden border border-gray-200">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  {post.excerpt}
-                </p>
-              </div>
-
-              {/* Article Content */}
-              <div className="prose prose-lg max-w-none">
-                {post.content.split('\n').map((paragraph, index) => {
-                  if (paragraph.startsWith('# ')) {
-                    return <h1 key={index} className="text-3xl font-bold mt-8 mb-4 text-gray-900">{paragraph.slice(2)}</h1>
-                  }
-                  if (paragraph.startsWith('## ')) {
-                    const title = paragraph.slice(3).trim()
-                    const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-                    return <h2 key={index} id={id} className="text-2xl font-semibold mt-8 mb-4 scroll-mt-24 text-gray-900">{title}</h2>
-                  }
-                  if (paragraph.startsWith('### ')) {
-                    const title = paragraph.slice(4).trim()
-                    const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-                    return <h3 key={index} id={id} className="text-xl font-semibold mt-6 mb-3 scroll-mt-24 text-gray-900">{title}</h3>
-                  }
-                  if (paragraph.startsWith('- **') && paragraph.includes('**:')) {
-                    const parts = paragraph.slice(2).split('**:')
-                    const title = parts[0].replace('**', '')
-                    const description = parts[1]
-                    return (
-                      <div key={index} className="my-3 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                        <strong className="text-blue-700">{title}:</strong>
-                        <span className="ml-1 text-gray-700">{description}</span>
-                      </div>
-                    )
-                  }
-                  if (paragraph.startsWith('- ')) {
-                    return <li key={index} className="ml-4 my-2 text-gray-700">{paragraph.slice(2)}</li>
-                  }
-                  if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                    return <p key={index} className="font-semibold my-4 text-lg text-gray-900">{paragraph.slice(2, -2)}</p>
-                  }
-                  if (paragraph.trim() === '') {
-                    return <br key={index} />
-                  }
-                  return <p key={index} className="my-4 leading-relaxed text-gray-700">{paragraph}</p>
-                })}
-              </div>
-            </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-16 bg-white border-t border-gray-100">
-          <Container>
-            <div className="max-w-6xl mx-auto px-6 lg:px-8">
-              <h2 className="text-2xl font-bold mb-8 text-gray-900">Related Articles</h2>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {relatedPosts.map((relatedPost) => (
-                  <Link key={relatedPost.id} href={`/blog/${relatedPost.id}`}>
-                    <div className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow border border-gray-200">
-                      <div className="relative h-48">
-                        <Image
-                          src={relatedPost.image}
-                          alt={relatedPost.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                          <Calendar className="h-3 w-3" />
-                          {new Date(relatedPost.publishedAt).toLocaleDateString('en-US', {
-                            month: 'short',
-                            day: 'numeric'
-                          })}
-                          <Clock className="h-3 w-3 ml-2" />
-                          {relatedPost.readTime}
-                        </div>
-                        <h3 className="font-semibold mb-2 line-clamp-2 text-gray-900">
-                          {relatedPost.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 line-clamp-2">
-                          {relatedPost.excerpt}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* CTA Section */}
-      <section className="py-16 bg-white">
-        <Container>
-          <div className="max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4 text-gray-900">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Discover how NBizz&apos;s AI-powered solutions can help you automate and scale your business operations.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/pricing">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                    Get Started Today
-                  </Button>
-                </Link>
-                <Link href="https://cal.com/samogb/30min">
-                  <Button variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-100">
-                    Schedule a Demo
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-    </div>
-  )
-}
+export const fmtDate = (d: string) =>
+  new Date(d + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });

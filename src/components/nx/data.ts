@@ -22,7 +22,7 @@ export const VENTURES: Venture[] = [
     sector: "Commerce",
     line: "Commerce infrastructure for brands that sell everywhere.",
     body:
-      "Stores, payments and WhatsApp ordering in one stack. Nepo Commerce gives growing brands the tools to sell online and in chat without stitching ten apps together. It is the home of getreech and NBooking.",
+      "Stores, payments and WhatsApp ordering in one stack. Nepo Commerce gives growing brands the tools to sell online and in chat without stitching ten apps together. Formerly known as getreech.",
     tags: ["Storefronts", "Payments", "WhatsApp ordering"],
     media: { kind: "image", src: "/nx/commerce-admin.webp", alt: "Nepo Commerce product admin" },
     status: "Live",

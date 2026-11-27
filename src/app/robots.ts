@@ -3,7 +3,7 @@ import { SITE_URL } from "@/components/nx/seo";
 
 /** Open to search engines and AI assistants alike: being cited by agents is part of being found. */
 export default function robots(): MetadataRoute.Robots {
-  const disallow = ["/api/", "/chat-demo", "/success"];
+  const disallow = ["/api/"];
   return {
     rules: [
       { userAgent: "*", allow: "/", disallow },

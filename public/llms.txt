@@ -17,7 +17,7 @@ Key facts:
 
 ## Ventures
 
-- [Nepo Commerce](https://www.nexusbizz.com/ventures/nepo-commerce): commerce infrastructure for brands that sell everywhere: storefronts, payments and WhatsApp ordering. Home of getreech and NBooking.
+- [Nepo Commerce](https://www.nexusbizz.com/ventures/nepo-commerce): commerce infrastructure for brands that sell everywhere: storefronts, payments and WhatsApp ordering. Formerly known as getreech.
 - [Fayaa Tech](https://www.nexusbizz.com/ventures/fayaa-tech): AI video and creative generation for brands.
 - [Sohae Finance](https://www.nexusbizz.com/ventures/sohae-finance): a renewable energy investment platform.
 
@@ -25,6 +25,11 @@ Key facts:
 
 - [Case study: Mercy Luxury Hair](https://www.nexusbizz.com/case-studies/mercy-luxury-hair)
 - [Case study: Ofam Mills](https://www.nexusbizz.com/case-studies/ofam-mills)
+
+## Company
+
+- [About Nexusbizz](https://www.nexusbizz.com/about): who we are, the studio, the ventures, founder Samuel Ogbonna
+- [Blog](https://www.nexusbizz.com/blog): notes on AI agents and conversational commerce
 
 ## Optional
 

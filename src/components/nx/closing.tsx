@@ -91,8 +91,10 @@ export function Footer() {
     {
       h: "Company",
       links: [
-        { href: "/contact", label: "Contact" },
         { href: "/about", label: "About" },
+        { href: "/case-studies", label: "Case studies" },
+        { href: "/blog", label: "Blog" },
+        { href: "/contact", label: "Contact" },
         { href: "https://www.instagram.com/nexusbizz/", label: "Instagram", ext: true },
       ],
     },

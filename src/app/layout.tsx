@@ -1,8 +1,6 @@
-import { Footer, Navbar } from "@/components";
 import { SITE_CONFIG } from "@/config";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import { LegacyFooterGate } from "@/components/nx/legacy-footer-gate";
 import { dark } from '@clerk/themes';
 import { Inter } from "next/font/google"; 
 import { Metadata, Viewport } from "next";
@@ -71,9 +69,6 @@ export default function RootLayout({
                 )}
             >
                     {children}
-                    <LegacyFooterGate>
-                        <Footer />
-                    </LegacyFooterGate>
             </body>
         </html>
     );

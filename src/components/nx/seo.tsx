@@ -41,6 +41,7 @@ export const organizationLd = {
   address: { "@type": "PostalAddress", addressCountry: "US" },
   areaServed: "Worldwide",
   sameAs: ["https://www.instagram.com/nexusbizz/"],
+  founder: { "@type": "Person", name: "Samuel Ogbonna", jobTitle: "Founder & CEO" },
   knowsAbout: [
     "AI agents",
     "Agentic AI",
